@@ -1,0 +1,12 @@
+.commentItems {
+    padding: "16px 16px";
+    /* gap: 16px; */
+    /* background: red; */
+    /* min-width: 300px; */
+}
+
+.carasolItem {
+    /* padding: "20px"; */
+    display: flex;
+    justify-content: center;
+}
