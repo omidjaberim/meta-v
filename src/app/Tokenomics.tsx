@@ -117,14 +117,13 @@ const tokenShareData = [
 ]
 const Tokenomics = ()=>{
     const theme =  useTheme();
-    const isSmallScreen  = useMediaQuery(theme.breakpoints?.down('sm'));
 
     return(
-        <Container component={"section"} id="tokenomics" className='bg-black' >
-           <Title>Tokenomics</Title>
+        <Container component={"section"} id="tokenomics" className='bg-black  ' >
+           <Title className='mt-[76px] lg:mt-0' >Tokenomics</Title>
             <TokenShares>
                 {tokenShareData.map((share,index)=>{
-                    return (<TokenShareWrapper key={index}> 
+                    return (<TokenShareWrapper key={index} className='hover:animate-pulse hover:scale-110' > 
                 <Box borderRadius={'12px'} display={"flex"} flexDirection={"column"} alignItems={"center"} padding={"16px"} width={"100%"} height={"100%"}  style={{backgroundImage:"linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(184, 135, 255, 0.32) 80%)"}}  >
                      <Typography  whiteSpace={'nowrap'} fontSize={'14px'} fontWeight={400} lineHeight={'24px'} color={"#FFF"}> {share.type} </Typography> 
                      <Typography  whiteSpace={'nowrap'} fontSize={'28px'} fontWeight={600} lineHeight={'36px'} color={"#FFF"}> {share.percentage} </Typography> 
@@ -140,7 +139,7 @@ const Tokenomics = ()=>{
     height:"max-content",
     maxWidth:"lg",
 }}>
-    <Spline scene="https://prod.spline.design/St8gnTY5GrEZpKpp/scene.splinecode"  /> 
+    {/* <Spline scene="https://prod.spline.design/St8gnTY5GrEZpKpp/scene.splinecode"  />  */}
 </Box>
 
  

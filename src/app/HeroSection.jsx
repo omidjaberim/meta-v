@@ -5,8 +5,7 @@ import GriLineImage from '@/assets/gridLine.svg';
 import AI from '@/assets/webglPreview/AI.png';
 import Blockchain from '@/assets/webglPreview/Blockchain.png';
 import VR from '@/assets/webglPreview/VR.png';
-import Spline from "@splinetool/react-spline";
-
+import Image from "next/image"
 
 const FoundationSection = styled(Box)(({theme})=>({
     fontFamily:"Oxanium",
@@ -205,7 +204,7 @@ const GradientCircle = styled(Box)(({theme})=>({
 
 let SplineScene = ({scene})=>{
   return (
-  <Box  style={{
+  <Box className="flex justify-center items-center" style={{
         objectFit:"contain",
         maxWidth:"100%",
         width:"100%",
@@ -214,14 +213,13 @@ let SplineScene = ({scene})=>{
               maxWidth:"310px",
         },
       } }> 
-            <Spline scene={scene.sceneURL} className='w-full fill' /> 
-      </Box>
+            <Image src={scene.previewImage} width={420} height={340} className='cursor-cell' style={{animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite , bounce 3s infinite"}} />
+  </Box>
   )}
 
 const SplineWithPreview =({scene,active})=>{
   if(!active) return
   return (
-    <>
         <Box sx={{
           display:"flex",
           width:"100%",
@@ -232,7 +230,7 @@ const SplineWithPreview =({scene,active})=>{
           }}>
             <SplineScene className="w-[350px] h-[300px]" scene={scene}/>
          </Box>
-  </>)
+         )
 }
 
 
@@ -272,7 +270,7 @@ export default  () => {
         {isSmallScreen ? (<GradientText>
             Technological <br/> Foundations
         </GradientText>) : (<GradientText>
-        Technological Foundations <br/> of META-V
+            Technological Foundations <br/> of META-V
         </GradientText>)
         }
 

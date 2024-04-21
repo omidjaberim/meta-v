@@ -35,8 +35,6 @@ const Section = styled(Box)(({ theme }) => ({
 
 
 const PresaleSection = ()=>{
-    const matches = useMediaQuery("(max-width:1150px)");
-    const matchesTwo = useMediaQuery("(max-width:1350px)");
   
     const typoStyle = {
       color: "#FFF",
@@ -68,14 +66,14 @@ const PresaleSection = ()=>{
                 zIndex:0,
             }}>
               <Image alt="bg" src={heroMask} className="w-full " />
-              <Image alt="bg" src={"/star-img.svg"} width={24} height={24} className="absolute z-50 top-[32%] left-[10%]" />
-              <Image alt="bg" src={"/star1.svg"} width={24} height={24} className="absolute z-50 top-[52%] left-[5%]" />
-              <Image alt="bg" src={"/star2.svg"} width={24} height={24} className="absolute z-50 top-[72%] left-[15%]" />
-              <Image alt="bg" src={"/star3.svg"} width={24} height={24} className="absolute z-50 top-[92%] left-[3%]" />
-              <Image alt="bg" src={"/star-img.svg"} width={24} height={24} className="absolute z-50 top-[32%] right-[10%]" />
-              <Image alt="bg" src={"/star2.svg"} width={24} height={24} className="absolute z-50 top-[52%] right-[5%]" />
-              <Image alt="bg" src={"/star1.svg"} width={24} height={24} className="absolute z-50 top-[72%] right-[15%]" />
-              <Image alt="bg" src={"/star3.svg"} width={24} height={24} className="absolute z-50 top-[92%] right-[3%]" />
+              <Image alt="bg" src={"/star-img.svg"} width={24} height={24} className="absolute z-50 top-[32%] left-[10%] animate-pulse" />
+              <Image alt="bg" src={"/star3.svg"} width={24} height={24} className="absolute z-50 top-[52%] left-[5%] animate-pulse" />
+              <Image alt="bg" src={"/star2.svg"} width={24} height={24} className="absolute z-50 top-[72%] left-[15%] animate-pulse" />
+              <Image alt="bg" src={"/star3.svg"} width={24} height={24} className="absolute z-50 top-[92%] left-[3%] animate-pulse" />
+              <Image alt="bg" src={"/star-img.svg"} width={24} height={24} className="absolute z-50 top-[32%] right-[10%] animate-pulse" />
+              <Image alt="bg" src={"/star3.svg"} width={24} height={24} className="absolute z-50 top-[52%] right-[5%] animate-pulse" />
+              <Image alt="bg" src={"/star2.svg"} width={24} height={24} className="absolute z-50 top-[72%] right-[15%] animate-pulse" />
+              <Image alt="bg" src={"/star3.svg"} width={24} height={24} className="absolute z-50 top-[92%] right-[3%] animate-pulse" />
             </Box>
             <Box zIndex={2} pb={{xs:1}}>
                 <Typography sx={typoStyle} display={"flex"} flexWrap={"wrap"} gap={{ xs:"2px", md:"2px", xl:"8px" }} width={"100%"} justifyContent={"center"}>

@@ -109,7 +109,10 @@ const SocialSection = () => {
   );
 };
 
+
+
 const Footer = () => {
+
   return (
       <Container className="w-full bg-gradient-to-r from-black  to-[#24243c]" margin={"auto"}>
         <Box

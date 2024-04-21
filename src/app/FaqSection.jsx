@@ -11,9 +11,8 @@ import {
 import minus from "@/assets/minus-icon.svg";
 import plus from "@/assets/plus-icon.svg";
 import Image from "next/image";
-import Spline from "@splinetool/react-spline";
 import gridLine from "@/assets/gridLine.svg";
-
+import FaqImg from "@/assets/webglPreview/BlackGlassCube.png"
 const ExpandPlusMinus = ({ isExpanded }) => {
   return (
     <Box
@@ -233,9 +232,10 @@ const FaqSection = () => {
 
   return (
       <Container id="FAQ"  margin={"auto"} component={"section"} className="bg-black w-full" >
-        <GradientText>
+        
+        <GradientText  >
           FAQ
-        </GradientText>
+        </GradientText>        
         <Box 
           className="flex w-full flex-1 sm:flex-col md:flex-row"
         >
@@ -253,13 +253,14 @@ const FaqSection = () => {
              
           </FaqWrapper>
           <Box className="sm:w-full md:w-1/2" >
-            <Spline scene="https://prod.spline.design/xEAEuMGb0xjefjee/scene.splinecode"  />
+            <Image src={FaqImg} width={350} height={450} />
+            {/* <Spline scene="https://prod.spline.design/xEAEuMGb0xjefjee/scene.splinecode"  /> */}
           </Box> 
         </Box>
-        <Image alt="bg" src={"/star2.svg"} width={24} height={24} className="absolute z-50 top-[52%] right-[15%]" />
-        <Image alt="bg" src={"/star2.svg"} width={24} height={24} className="absolute z-50 top-[12%] right-[45%]" />
-        <Image alt="bg" src={"/star3.svg"} width={24} height={24} className="absolute z-50 top-[22%] right-[35%]" />
-        <Image alt="bg" src={"/star3.svg"} width={24} height={24} className="absolute z-50 top-[72%] right-[45%]" />
+        <Image alt="bg" src={"/star2.svg"} width={24} height={24} className="absolute z-50 top-[52%] right-[15%] animate-pulse" />
+        <Image alt="bg" src={"/star2.svg"} width={24} height={24} className="absolute z-50 top-[12%] right-[45%] animate-pulse" />
+        <Image alt="bg" src={"/star3.svg"} width={24} height={24} className="absolute z-50 top-[22%] right-[35%] animate-pulse" />
+        <Image alt="bg" src={"/star3.svg"} width={24} height={24} className="absolute z-50 top-[72%] right-[45%] animate-pulse" />
         <GradientCircle />
       </Container>
   );

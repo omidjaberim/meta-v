@@ -185,16 +185,14 @@ const Comments =({profile ,comment , ...props })=>{
             <Box display={"flex"}  flex={1} flexDirection={"column"}>
                 <Typography variant='div'  fontSize={'14px'} fontWeight={600} lineHeight={'24px'} color={"linear-gradient(93deg, #CDCFFF 16.47%, #FED6FF 49.36%, #FFE5DF 81.61%)"} 
                 sx={{
-    background: hover ? 'linear-gradient(93deg, #CDCFFF 16.47%, #FED6FF 49.36%, #FFE5DF 81.61%)' : "#FFF",
-    WebkitBackgroundClip:'text',
-    WebkitTextFillColor:'transparent',
-    backgroundClip:'text',
+                  background: hover ? 'linear-gradient(93deg, #CDCFFF 16.47%, #FED6FF 49.36%, #FFE5DF 81.61%)' : "#FFF",
+                  WebkitBackgroundClip:'text',
+                  WebkitTextFillColor:'transparent',
+                  backgroundClip:'text',
                 }} >  {profile.username} </Typography> 
                 <Typography variant='p'  fontSize={'12px'} fontWeight={400} lineHeight={'20px'} color={"#FFF"}>  {profile.description} </Typography> 
             </Box>
-
         </Box>    
-        
         </Box>
     </>)
 }
@@ -204,12 +202,10 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
     const { carouselState: { currentSlide ,totalItems,slidesToShow} } = rest;
     return (
         <Box sx={{display:"flex" , gap:"24px" , alignItems:"center" , justifyContent:"center" }}>
-            {/* <img  style={{stroke:"red" , fill:"red" , background:"red" ,color:"red"}} src={arrowPrev}/> */}
-        <Box component={"button"}   sx={{ all: "unset" ,cursor:"pointer", "&:focus":{ outline:"none"}  , width:"48px",height:"48px" ,borderRadius:"140px" , background:"#222326", display:"flex" , justifyContent:"center",alignItems:"center" }} disabled ={currentSlide === 0 ? true : false} onClick={() => previous()}>
+        <Box  className="hover:scale-110" component={"button"}   sx={{ all: "unset" ,cursor:"pointer", "&:focus":{ outline:"none"}  , width:"48px",height:"48px" ,borderRadius:"140px" , background:"#222326", display:"flex" , justifyContent:"center",alignItems:"center" }} disabled ={currentSlide === 0 ? true : false} onClick={() => previous()}>
             <ArrowPrev isActive={currentSlide === 0 ? !true : !false} />
         </Box>
-
-        <Box component={"button"} sx={{all: "unset" , cursor:"pointer", "&:focus":{ outline:"none"} ,width:"48px",height:"48px" ,borderRadius:"140px" , background:"#222326", display:"flex" , justifyContent:"center",alignItems:"center" }} disabled ={(currentSlide+slidesToShow) === totalItems ? true : false} onClick={() => next()}>
+        <Box  className="hover:scale-110" component={"button"} sx={{all: "unset" , cursor:"pointer", "&:focus":{ outline:"none"} ,width:"48px",height:"48px" ,borderRadius:"140px" , background:"#222326", display:"flex" , justifyContent:"center",alignItems:"center" }} disabled ={(currentSlide+slidesToShow) === totalItems ? true : false} onClick={() => next()}>
             <ArrowNext isActive={totalItems === (currentSlide+slidesToShow)  ? !true : !false } />
         </Box>       
       </Box>
@@ -218,12 +214,9 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
 
   const CarouselWrapper = ()=>{
     return (
-        <>
           <Carousel  arrows={false} sliderClass="commentItems" itemClass="carasolItem"  infinite autoPlay={!false} autoPlaySpeed={5000} transitionDuration={500}  partialVisible={true} centerMode={!true} responsive={responsive} renderButtonGroupOutside={true} customButtonGroup={<ButtonGroup/>} >
             {commentsData.map((commentData,index)=>(<Comments key={index} profile={commentData.profile} comment={commentData.comment}/>))}
           </Carousel>
-      
-        </>
       )
   }
 

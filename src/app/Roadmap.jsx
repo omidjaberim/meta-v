@@ -190,7 +190,7 @@ const CardStyle = styled(Box)(({theme})=>({
 
 const Card = ({title,subtitle,points})=>{
     return (
-    <CardStyle>
+    <CardStyle className='hover:animate-pulse' >
     <Box component='div' display={"flex"} alignItems={"center"} gap={"8px"} alignSelf={"stretch"}>
         <Image  src={arrowImage} width={"24px"} height={"24px"}/>
         <Typography component={'span'} color={"#B887FF"} fontFamily={"Oxanium"} fontSize="20px" fontStyle={"normal"} fontWeight={"600"} lineHeight={"32px"}>{title}</Typography>
@@ -233,9 +233,9 @@ const roadMapData = [{
 const Roadmap = ()=>{
     return (
     <RoadMapWrapper id='roadmap'  margin={"auto"} className='bg-black w-full' >
-      <RoadMapContainer>
+      <RoadMapContainer className='mt-[286px] lg:mt-0' >
       <Gradient/>
-      <Title>RoadMap</Title>
+      <Title className='mt-[80px]' >RoadMap</Title>
       <CardWrapper>
       {
           roadMapData.map((data,index)=>{

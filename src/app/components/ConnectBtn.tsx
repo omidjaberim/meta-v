@@ -4,7 +4,7 @@ import ConnectBtnBg from "@/assets/connectBtn.svg"
 const ConnectBtn = ()=>{
 
     return(
-        <Button className="rounded-[12px]"  >
+        <Button className="rounded-[12px] hover:animate-pulse"  >
             <Image alt="walet" src={ConnectBtnBg}   />
         </Button>
     )

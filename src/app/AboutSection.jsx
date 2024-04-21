@@ -3,7 +3,7 @@ import aboutImage from "@/assets/about.svg";
 import waveformImage from "@/assets/waveform.png";
 import Image from "next/image"
 import { makeStyles } from '@mui/styles';
-import { useTheme } from '@emotion/react';
+import { forwardRef } from 'react';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -220,22 +220,18 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default () => {
+const About =  forwardRef((props,ref)=>{
   const classes = useStyles();
-  const theme =  useTheme();
-
   return (
-    <section  id='about' className={classes.frame29 + " bg-black"}>
+    <section id='about' className={classes.frame29 + " bg-black"} ref={ref} >
         <div className={classes.sectionText}>
-            <div className={classes.sectionTop}>
+            <div className={classes.sectionTop + " mt-[56px] lg:mt-0"} >
                 <img src={aboutImage.src} className={classes.sectionTopImg} alt="about"></img>
                 <div className={classes.metaV}>META-V</div>
             </div>
-            <div className={classes.sectionDescription +" flex md:hidden"}>
-                 
+            <div className={classes.sectionDescription +" flex md:hidden"}>                 
                 `META-V embodies the essence of a second life, a realm where dreams once confined to the realm of aspiration in the real world are transformed into reality without boundaries. This innovative metaverse offers an unparalleled opportunity for everyone to
-                live a life unrestricted by physical limitations. From pursuing degrees at top universities to participating in grand events, celebrations, and delving into games and interactions`
-                
+                live a life unrestricted by physical limitations. From pursuing degrees at top universities to participating in grand events, celebrations, and delving into games and interactions`                
             </div>
             <div className={classes.sectionDescription +" hidden md:flex" } >
             `META-V offers a cutting-edge XR experience by merging VR, AI, Blockchain, and Cryptocurrencies in the metaverse. Users can immerse themselves in virtual environments for work, education, and recreation, while also participating in a digital economy and
@@ -248,5 +244,6 @@ export default () => {
         </div>
     </section>
   );
-};
+});
 
+export default About
