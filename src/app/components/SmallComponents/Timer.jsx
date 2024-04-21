@@ -43,29 +43,22 @@ export default function TimerCountDown({ time }) {
 
   const timerWrapperStyle = {
     justifyContent:"center",
-    // border: "1px solid #e4acb2",
     width:matches ? "70px" : "92px",
-    // height: matches ? "72px" : "92px",
-    borderRadius: "12px",
+    borderRadius: "16px",
     padding:"1px",
-    backgroundImage: "linear-gradient(to right, #979BFF 0%, #FED6FF 50%, #FFAE9C 100%)",
-
-  }
+    }
 
   const timerStyle = {
     borderRadius: "inherit",
-    background:"black",
+    background:"#231b2a",
     display:"flex",
     justifyContent:"center",
     alignItems:"center",
     flexDirection:"column",
-
     color: "#e4acb2",
     fontSize: matches ? "28px" : "36px",//{ xs: "28px", md: "36px" },
     fontWeight: 600,//{ xs: "600", md: "600" },
     textAlign: "center",
-    // py: 2,
-    // padding:"10px",
     lineHeight: "2rem",//matches ? "36px" : "44px",//{ xs: "36px", sm: "44px" },
     fontFamily: "Oxanium",
     aspectRatio:1,
@@ -76,9 +69,7 @@ export default function TimerCountDown({ time }) {
   const timerValueStyle = {
     fontSize: "12px",
     lineHeight: "24px",//{ xs: "20px", sm: "24px" },
-    // fontSize: matches ? "12px" : "14px",
     fontWeight: "400",
-    // marginTop: "-20px",
     color: "#FFF",
   };
 
@@ -86,7 +77,7 @@ export default function TimerCountDown({ time }) {
     <>
       <Box display="flex" alignItems="center" justifyContent="space-between" width={"100%"} >
        
-        <Box display="flex" flexDirection="column" alignItems="center"  sx={timerWrapperStyle} >
+        <Box  className="border border-[#303136] text-gradient-to-r from-[#FED3CA] to-[#FFA998]" display="flex" flexDirection="column" alignItems="center"  sx={timerWrapperStyle} >
           <Box sx={timerStyle}>
             {countTime.time_days > 9 ? "" : 0}
             {countTime.time_days}
@@ -96,7 +87,7 @@ export default function TimerCountDown({ time }) {
         </Box>
 
         <Box display="flex" flexDirection="column" alignItems="center" sx={timerWrapperStyle}>
-          <Box sx={timerStyle} className="borderImg">
+          <Box sx={timerStyle} >
             {countTime.time_Hours > 9 ? "" : 0}
             {countTime.time_Hours}
             <br />
@@ -105,16 +96,15 @@ export default function TimerCountDown({ time }) {
         </Box>
 
         <Box display="flex" flexDirection="column" alignItems="center" sx={timerWrapperStyle}>
-          <Box sx={timerStyle} className="borderImg">
+          <Box sx={timerStyle} >
             {countTime.time_Minusts > 9 ? "" : 0}
             {countTime.time_Minusts}
             <br />
             <span style={timerValueStyle}>{"Minutes"}</span>
           </Box>
         </Box>
-
         <Box display="flex" flexDirection="column" alignItems="center" sx={timerWrapperStyle}>
-          <Box sx={timerStyle} className="borderImg">
+          <Box sx={timerStyle}>
             {countTime.time_seconds > 9 ? "" : 0}
             {countTime.time_seconds}
             <br />

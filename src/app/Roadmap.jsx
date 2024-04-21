@@ -190,7 +190,7 @@ const CardStyle = styled(Box)(({theme})=>({
 
 const Card = ({title,subtitle,points})=>{
     return (
-    <CardStyle className='hover:animate-pulse' >
+    <CardStyle className='hover:scale-105 transition-all' >
     <Box component='div' display={"flex"} alignItems={"center"} gap={"8px"} alignSelf={"stretch"}>
         <Image  src={arrowImage} width={"24px"} height={"24px"}/>
         <Typography component={'span'} color={"#B887FF"} fontFamily={"Oxanium"} fontSize="20px" fontStyle={"normal"} fontWeight={"600"} lineHeight={"32px"}>{title}</Typography>

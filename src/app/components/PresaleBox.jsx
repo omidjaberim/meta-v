@@ -208,7 +208,7 @@ import {
     };
   
     return (
-      <Box zIndex={1} width={{xs:"100%",xl:"max-content" , md:"max-content"}} >
+      <Box zIndex={1} width={{xs:"100%",xl:"max-content" , md:"max-content"}} className="font-Oxanium" >
         <Loading loading={loading} />
         <ToastNotify alertState={alertState} setAlertState={setAlertState} />
         <Stack gap={{xl:2 , md:2 , xs:2}} maxWidth={'100%'} px={{ xs: 0, sm: 4  }} width={"100%"} alignItems={"center"} justifyContent={"center"}>
@@ -217,11 +217,9 @@ import {
             sx={{
               color: "#EBE9ED",
               fontSize: { xs: "20px" },
-              fontFamily: "Oxanium",
-              lineHeight: "30px",
-              fontWeight: "600",
               textAlign: "center",
             }}
+            className="font-Oxanium leading-8 font-normal	"
           >
             Market Listing time
           </Typography>
@@ -232,11 +230,10 @@ import {
         <Stack
           mt={6}
           sx={{
-            background: "#221C28",
+            background: "#231b2a",
             px: { xs: 2, sm: 4 },
             py: 4,
             borderRadius: "12px",
-  
             gap: 2,
           }}
         >
@@ -245,17 +242,18 @@ import {
             justifyContent={"space-between"}
             gap={{ xs: 1, sm: 0 }}
             alignItems={{ xs: "start", md: "center" }}
+            className="font-Oxanium"
           >
             <Typography
               variant="h1"
               sx={{
                 color: "#EBE9ED",
                 fontSize: { xs: "20px", sm: "28px" },
-                fontFamily: "Oxanium",
                 lineHeight: { xs: "32px", sm: "36px" },
                 fontWeight: "600",
                 textAlign: "left",
               }}
+              
             >
               PreSale{" "}
               <span
@@ -269,7 +267,6 @@ import {
                 component={"span"}
                 sx={{
                   backgroundColor: "#f1423a",
-                  fontFamily: "Oxanium",
                   fontSize: { xs: "14px", sm: "16px" },
                   ml: 1,
                   py: 0.8,
@@ -304,7 +301,6 @@ import {
                 sx={{
                   color: "#EBE9ED",
                   fontSize: "20px",
-                  fontFamily: "Oxanium",
                   lineHeight: "32px",
                   fontWeight: "400",
                   textAlign: "center",
@@ -324,7 +320,6 @@ import {
                 sx={{
                   color: "#EBE9ED",
                   fontSize: "20px",
-                  fontFamily: "Oxanium",
                   lineHeight: "32px",
                   fontWeight: "400",
                   textAlign: "center",
@@ -354,7 +349,6 @@ import {
               sx={{
                 color: "#75717F",
                 fontSize: { xs: "14px", sm: "16px" },
-                fontFamily: "Oxanium",
                 lineHeight: "30px",
                 fontWeight: "400",
                 textAlign: "center",
@@ -381,7 +375,6 @@ import {
                 sx={{
                   color: "#EBE9ED",
                   fontSize: "20px",
-                  fontFamily: "Oxanium",
                   lineHeight: "32px",
                   fontWeight: "400",
                   textAlign: "center",
@@ -394,7 +387,6 @@ import {
                 sx={{
                   color: "#EBE9ED",
                   fontSize: "20px",
-                  fontFamily: "Oxanium",
                   lineHeight: "32px",
                   fontWeight: "400",
                   textAlign: "center",
@@ -447,7 +439,6 @@ import {
                       py: 0.5,
                       mr: 0.5,
                       width: "fit-content",
-                      fontFamily: "Oxanium",
                       fontSize: "12px",
                       fontWeight: "700",
                       color: "#000000",
@@ -486,7 +477,6 @@ import {
                 sx={{
                   color: "#EBE9ED",
                   fontSize: "20px",
-                  fontFamily: "Oxanium",
                   lineHeight: "32px",
                   fontWeight: "600",
                   textAlign: "center",
@@ -508,7 +498,6 @@ import {
                 sx={{
                   color: "#75717F",
                   fontSize: { xs: "14px" },
-                  fontFamily: "Oxanium",
                   lineHeight: "24px",
                   fontWeight: "400",
                   textAlign: "center",
@@ -522,7 +511,6 @@ import {
                 sx={{
                   color: "#EBE9ED",
                   fontSize: "20px",
-                  fontFamily: "Oxanium",
                   lineHeight: "32px",
                   fontWeight: "600",
                   textAlign: "center",
@@ -560,7 +548,6 @@ import {
                 whiteSpace:"nobreak",
                 color: "#EBE9ED",
                 fontSize: { xs: "20px", sm: "28px" },
-                fontFamily: "Oxanium",
                 lineHeight: { xs: "32px", sm: "36px" },
                 fontWeight: "600",
               }}
@@ -568,8 +555,7 @@ import {
               Buy With
             </Typography>
             <Stack
-              sx={{
-                
+              sx={{                
                 background: "#302a38",
                 flexDirection: "row",
                 borderRadius: "12px",
@@ -617,7 +603,6 @@ import {
                     sx={{
                       mt: 0.5,
                       color: "#EBE9ED",
-                      fontFamily: "Oxanium",
                       fontSize: { xs: "14px", sm: "14px" },
                       fontWeight: buyWith === text ? "400" : "700",
                       lineHeight: "24px",
@@ -718,7 +703,6 @@ import {
               sx={{
                 color: "#75717F",
                 fontSize: "14px",
-                fontFamily: "Oxanium",
                 lineHeight: "24px",
                 fontWeight: "400",
                 textAlign: "center",

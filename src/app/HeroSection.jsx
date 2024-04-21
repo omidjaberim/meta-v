@@ -266,8 +266,9 @@ export default  () => {
         padding={'16px'}
         component={"section"}
         className='bg-black'
+        id="Technology"
       >
-        {isSmallScreen ? (<GradientText>
+        {isSmallScreen ? (<GradientText className='lg:mt-0 mt-[48px]' >
             Technological <br/> Foundations
         </GradientText>) : (<GradientText>
             Technological Foundations <br/> of META-V
