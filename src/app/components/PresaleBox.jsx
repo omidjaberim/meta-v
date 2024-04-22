@@ -70,7 +70,7 @@ import {
   
     const initVoidSigner = async () => {
       try {
-        let dec = await tokenReadFunction("decimals");
+        let dec = await tokenReadFunction("decimals");    
         let stage = await preSaleReadFunction("currentStage");
         setcurrentStage(+stage?.toString());
         let usdtToToken = await preSaleReadFunction("usdtToToken", [
@@ -182,7 +182,6 @@ import {
         showAlert(error?.shortMessage);
       }
     };
-  
     useEffect(() => {
       const calculatorUSDT = async () => {
         try {
@@ -232,10 +231,10 @@ import {
           sx={{
             background: "#231b2a",
             px: { xs: 2, sm: 4 },
-            py: 4,
-            borderRadius: "12px",
+            py: 4,            
             gap: 2,
           }}
+          className="rounded-3xl"
         >
           <Stack
             flexDirection={{ xs: "column", md: "row" }}
@@ -281,7 +280,6 @@ import {
                 80%
               </Box>
             </Typography>
-  
             <Box
               sx={{
                 backgroundColor: "#352E3E",
@@ -321,13 +319,15 @@ import {
                   color: "#EBE9ED",
                   fontSize: "20px",
                   lineHeight: "32px",
-                  fontWeight: "400",
+                  fontWeight: "600",
                   textAlign: "center",
                 }}
+                className="font-Oxanium"
               >
                 <span
                   style={{
                     color: "#B28FEE",
+                    lineHeight:"32px"
                   }}
                 >
                   $
@@ -374,23 +374,23 @@ import {
                 variant="body1"
                 sx={{
                   color: "#EBE9ED",
-                  fontSize: "20px",
+                  fontSize: "18px",
                   lineHeight: "32px",
                   fontWeight: "400",
                   textAlign: "center",
                 }}
               >
-                Listing Price ={" "}
+                Listing Price <span className="text-[#9A9DAB] mx-1" >=</span>
               </Typography>
               <Typography
                 variant="body1"
                 sx={{
-                  color: "#EBE9ED",
-                  fontSize: "20px",
+                  fontSize: "18px",
                   lineHeight: "32px",
                   fontWeight: "400",
                   textAlign: "center",
                 }}
+                className="bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text"
               >
                 <span
                   style={{
@@ -415,7 +415,7 @@ import {
               height={"100%"}
               alignItems={"start"}
               justifyContent={"center"}
-              position={"relative"}
+              position={"relative"}            
             >
               <Box
                 sx={{
@@ -423,11 +423,11 @@ import {
                   height: "100%",
                   borderRadius: "20px",
                   background:
-                    "linear-gradient(92.51deg, #979BFF 0.48%, #FED6FF 50.74%, #FFAE9C 100%)",
+                    "linear-gradient(92.51deg, #979BFF 0.48%, #FED6FF 50.74%, #FFAE9C 100%) ",
                   display: "flex",
                   justifyContent: "end",
                   py: 0.5,
-                  alignItems: "center",
+                  alignItems: "center",                  
                 }}
               >
                 {progressBarForAll >= 12 && (
@@ -439,11 +439,10 @@ import {
                       py: 0.5,
                       mr: 0.5,
                       width: "fit-content",
-                      fontSize: "12px",
-                      fontWeight: "700",
-                      color: "#000000",
+                      fontSize: "14px",
                       borderRadius: "12px",
                     }}
+                    className="font-Oxanium font-bold leading-4 text-[#131315]"
                   >
                     {parseFloat(progressBarForAll)?.toFixed(1)}%
                   </Box>
@@ -463,11 +462,11 @@ import {
                 sx={{
                   color: "#75717F",
                   fontSize: { xs: "14px" },
-                  fontFamily: "Oxanium",
                   lineHeight: "24px",
                   fontWeight: "400",
                   textAlign: "center",
                 }}
+                className="font-Oxanium"
               >
                 Tokens Sold
               </Typography>
@@ -527,7 +526,6 @@ import {
               </Typography>
             </Stack>
           </Stack>
-  
           <Divider
             sx={{
               background: "#3F3947",
@@ -590,7 +588,7 @@ import {
                     alignItems: "center",
                     gap:"4px",
                     borderRadius: "12px",
-                    py: { xs: 1, sm: 1 },
+                    py: { xs: 1, sm: 0.4 },
                     px: { xs: 1, md: 1 },
                     width:"100%",
                     background: buyWith === text ? "#514e57" : "transparent",
@@ -600,8 +598,7 @@ import {
                   <Box component={"img"} alt="" src={img.src} width="20px" />
                   <Typography
                     variant="subtitle2"
-                    sx={{
-                      mt: 0.5,
+                    sx={{                      
                       color: "#EBE9ED",
                       fontSize: { xs: "14px", sm: "14px" },
                       fontWeight: buyWith === text ? "400" : "700",
@@ -629,7 +626,6 @@ import {
                   type="text"
                   placeholder="0.00"
                   color="#EBE9ED"
-                  active
                   value={amount}
                   onChange={handleInputChange}
                   InputProps={{
@@ -658,7 +654,6 @@ import {
                 />
               </Box>
             </Stack>
-  
             <Stack  width={"100%"} >
               <Box>
                 <StyledInput
@@ -694,7 +689,7 @@ import {
               width="100%"
               onClick={async () => (account ? buyHandler() : await open())}
             >
-              {account ? "BUY" : "CONNECT"}
+              {account ? "Buy" : "Connect"}
             </StyledButton>
           </Stack>
           {( account && <Stack alignItems={"center"} mt={1}>

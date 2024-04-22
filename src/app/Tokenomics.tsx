@@ -56,7 +56,6 @@ const TokenShareWrapper = styled(Box)(({theme})=>({
 
 const Title = styled(Box)(({theme})=>({
  textAlign: 'center',
-fontFamily: 'Oxanium',
 fontSize: '36px',
 fontStyle: 'normal',
 fontWeight: '400',
@@ -119,8 +118,8 @@ const Tokenomics = ()=>{
     const theme =  useTheme();
 
     return(
-        <Container component={"section"} id="tokenomics" className='bg-black  ' >
-           <Title className='mt-[76px] lg:mt-0' >Tokenomics</Title>
+        <Container component={"section"} id="tokenomics" className='bg-black font-Oxanium mb-[130px]' >
+           <Title  >Tokenomics</Title>
             <TokenShares>
                 {tokenShareData.map((share,index)=>{
                     return (<TokenShareWrapper key={index} className='hover:animate-pulse hover:scale-105 transition-all' > 

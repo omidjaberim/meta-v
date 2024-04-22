@@ -5,23 +5,18 @@ import HamMenu from "@/assets/menu.svg"
 import ConnectBtn from "@/app/components/ConnectBtn";
 import React, { forwardRef, useRef, useState } from "react";
 import SideMenu from "./components/SideMenu";
+import { StyledButton } from "./components/SmallComponents/AppComponents";
 
-const Header = forwardRef((props,ref:any)=>{
+interface IProp{
+  scrollToId:(x:string)=>void;
+  selectedItem : string;
+}
+const Header = forwardRef((props:IProp,ref:any)=>{
     const [open, setOpen] = React.useState(false);
     const toggleDrawer = (newOpen: boolean)  => {
       setOpen(newOpen);
     };
-    const [selectedItem,setSelectedItem] = useState<string>("meta")
-    const scrollToY = (y:number)=>{
-      scrollTo(0, y)
-      setSelectedItem("meta")
-    }
-    const scrollToId = (id:string)=>{
-      if(id === "meta") scrollToY(0);
-      document.getElementById(id)?.scrollIntoView();
-      setSelectedItem(id)
-
-    }
+    const {scrollToId,selectedItem} = props;
 
 return (
     <Grid className="flex justify-center items-center w-full font-Oxanium text-[14px] text-[#fafafa] leading-8	font-semibold py-[12px]  bg-[#131315]  shadow-black/5 sticky top-0 z-50" >
@@ -30,7 +25,7 @@ return (
               <Image src={HamMenu} alt="meta" width={24} height={24}  className="sm:flex lg:hidden cursor-pointer"  onClick={()=>toggleDrawer(!open)}  />
               <Image src={Logo} alt="meta" width={32} height={30}  />                 
               <Box className="text-white sm:hidden lg:flex items-center gap-[2px] md:gap-[22px] xl:gap-[32px]" >
-                  <span className={`cursor-pointer hover:animate-pulse hover:scale-105 transition-all  ${selectedItem === 'meta' ? ' scale-105 text-[#1976d2]' : ''}`} onClick={()=>scrollToY(0)}  >META-V</span>
+                  <span className={`cursor-pointer hover:animate-pulse hover:scale-105 transition-all  ${selectedItem === 'meta' ? ' scale-105 text-[#1976d2]' : ''}`} onClick={()=>scrollToId("meta")}  >META-V</span>
                   <span className={`cursor-pointer hover:animate-pulse hover:scale-105 transition-all ${selectedItem === 'about' ? ' scale-105 text-[#1976d2]' : ''} `} onClick={()=>scrollToId('about')} >About  META-V</span>
                   <span className={`cursor-pointer hover:animate-pulse hover:scale-105 transition-all ${selectedItem === 'Technology' ? ' scale-105 text-[#1976d2]' : ''}  `} onClick={()=>scrollToId('Technology')} >Technology</span>
                   <span className={`cursor-pointer hover:animate-pulse hover:scale-105 transition-all ${selectedItem === 'tokenomics' ? ' scale-105 text-[#1976d2]' : ''}  `} onClick={()=>scrollToId('tokenomics')} >Tokenomics</span>
@@ -43,7 +38,7 @@ return (
           </Grid>
           <Grid className="w-1/2 lg:w-1/4 flex items-center justify-end sm:gap-[4px] xl:gap-[16px]" >
             <span>Whitepaper</span>
-            <ConnectBtn  />
+            <StyledButton  ><span className="font-semibold text-[14px] flex " >Connect <span> Wallet</span></span></StyledButton>
           </Grid>
         </Box>
     </Grid>

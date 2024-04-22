@@ -3,6 +3,8 @@ import preSaleAbi from "./preSaleAbi.json";
 import usdtAbi from "./usdtAbi.json";
 import usdcAbi from "./usdcAbi.json";
 import stakingAbi from "./stakingAbi.json";
+import { mainnet } from 'wagmi/chains' 
+
 import {
   tokenAddress,
   preSaleAddress,
@@ -15,13 +17,18 @@ import { readContract, writeContract } from "wagmi/actions";
 import { waitForTransaction } from "@wagmi/core";
 
 export const tokenReadFunction = async (functionName, args) => {
+  try{
   const data = await readContract({
     address: tokenAddress,
     abi: tokenAbi,
     functionName,
     args,
+    chainId: mainnet.id 
   });
   return data;
+}catch(e){
+  console.log(e,"errorrs")
+}
 };
 
 export const preSaleReadFunction = async (functionName, args) => {

@@ -1,5 +1,6 @@
 import { Alert, Box, Snackbar, TextField } from "@mui/material";
 import { Button } from "@mui/material";
+import { useState } from "react";
 
 export function ToastNotify({ alertState, setAlertState }) {
   return (
@@ -32,7 +33,6 @@ export function StyledButton({ children, ...props }) {
           fontSize: "22px",
           boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
           textTransform: "capitalize",
-          fontFamily: "Oxanium",
           borderRadius: "12px",
           fontWeight: "600",
           width: props.width,
@@ -44,6 +44,7 @@ export function StyledButton({ children, ...props }) {
               "linear-gradient(92.51deg, #FFAE9C 0.48%, #FED6FF 50.74%, #979BFF 100%)",
           },
         }}
+        className="font-Oxanium"
       >
         {children}
       </Button>
@@ -88,19 +89,21 @@ export function StyledTitle({ children, ...props }) {
   );
 }
 
-export const StyledInput = ({ color,active, borderColor, ...props }) => {
+export const StyledInput = ({ color, borderColor, ...props }) => {
+  const[active,setActive] = useState(false)
   return (
     <Box sx={{
       height:"64px",
       borderRadius:"12px",
-    }} >
-
+    }}     
+    >
     <TextField
       {...props}
+      onMouseDown={()=>setActive(true)}
+      onMouseOut={()=>setActive(false)}
       sx={{
         background: "#2a2730",
         borderRadius: "inherit",
-        // border: `2px solid ${borderColor}`,
         width: "100%",
         "& .MuiOutlinedInput-root": {
           borderRadius: "inherit",
@@ -115,14 +118,12 @@ export const StyledInput = ({ color,active, borderColor, ...props }) => {
             border: "none",
           },
 
-          background: active ? "linear-gradient(#2a2730 0 0) padding-box,linear-gradient(92.51deg, #FFAE9C 0.48%, #FED6FF 50.74%, #979BFF 100%) border-box" : "linear-gradient(#2a2730 0 0)",
-          // padding: "10px",
+          background: active ? "linear-gradient(#2a2730 0 0) padding-box,linear-gradient(92.51deg,#979BFF  0.48%, #FED6FF 50.74%, #FFAE9C 100%) border-box" : "linear-gradient(#2a2730 0 0)",
           border: active ?  "2px solid transparent" : "2px solid rgba(255, 255, 255, 0.05)",
-          // borderRadius: 15px",
           color:"#FFF",
           display: "flex",
         },
-
+        
         input: {
           "&::placeholder": {
             color: "#66656D !important",
@@ -131,7 +132,6 @@ export const StyledInput = ({ color,active, borderColor, ...props }) => {
           color: `${color}`,
           paddingTop: "16px",
           paddingBottom: "16px",
-
           fontSize: "20px",
           fontWeight: "600",
           fontFamily: "Oxanium",

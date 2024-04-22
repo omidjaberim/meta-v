@@ -32,8 +32,6 @@ const ExpandPlusMinus = ({ isExpanded }) => {
 const FAQ = ({ question, answer, expanded, handleChange, index }) => {
   const theme =  useTheme();
   const isMediumScreen  = useMediaQuery(theme.breakpoints.down('md'));
-
-
   return (
       <Accordion
         expanded={index == expanded}
@@ -60,7 +58,6 @@ const FAQ = ({ question, answer, expanded, handleChange, index }) => {
               justifyContent: "space-around",
               color: "#FFF",
               textAlign: "start",
-              fontFamily: "Oxanium",
               fontSize:  isMediumScreen ? "16px" :"20px",
               fontStyle: "normal",
               fontWeight: "600",
@@ -74,7 +71,6 @@ const FAQ = ({ question, answer, expanded, handleChange, index }) => {
           <Typography
             sx={{
               color: "#9A9DAB",
-              fontFamily: "Oxanium",
               fontSize: "14px",
               fontStyle: "normal",
               fontWeight: "400",
@@ -143,7 +139,6 @@ const Container = styled(Box)(({ theme }) => ({
 
 const GradientText = styled("div")(({ theme, active }) => ({
   textAlign: "center",
-  fontFamily: "Oxanium",
   fontSize: "36px",
   fontStyle: "normal",
   fontWeight: "400",
@@ -156,7 +151,6 @@ const GradientText = styled("div")(({ theme, active }) => ({
 
   [`@media (max-width: ${theme.breakpoints.values.md}px)`]: {
     textAlign: "center",
-    fontFamily: "Oxanium",
     fontSize: "28px",
     fontStyle: "normal",
     fontWeight: "600",
@@ -166,7 +160,6 @@ const GradientText = styled("div")(({ theme, active }) => ({
 
   [`@media (max-width: ${theme.breakpoints.values.sm}px)`]: {
     textAlign: "center",
-    fontFamily: "Oxanium",
     fontSize: "28px",
     fontStyle: "normal",
     fontWeight: "600",
@@ -231,8 +224,8 @@ const FaqSection = () => {
   };
 
   return (
-      <Container id="FAQ"  margin={"auto"} component={"section"} className="bg-black w-full" >        
-        <GradientText>
+      <Container id="FAQ"  margin={"auto"} component={"section"} className="bg-black w-full font-Oxanium" >        
+        <GradientText className='mt-[116px] lg:mt-[20px]' >
           FAQ
         </GradientText>        
         <Box 
@@ -248,8 +241,7 @@ const FaqSection = () => {
                 {...faq}
                 
               ></FAQ>
-            ))}
-             
+            ))}             
           </FaqWrapper>
           <Box className="sm:w-full md:w-1/2" >
           <Image src={FaqImg} width={350} height={450} />

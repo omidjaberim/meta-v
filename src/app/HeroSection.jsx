@@ -8,7 +8,6 @@ import VR from '@/assets/webglPreview/VR.png';
 import Image from "next/image"
 
 const FoundationSection = styled(Box)(({theme})=>({
-    fontFamily:"Oxanium",
     width: '100%',
     position:"relative",
     backgroundSize: "contain",
@@ -37,7 +36,6 @@ const FoundationSection = styled(Box)(({theme})=>({
 
   const GradientText = styled('div')(({theme,active})=>({
       textAlign: 'center',
-      fontFamily:"Oxanium",
       fontSize: '36px',
       fontStyle: 'normal',
       fontWeight: '400',
@@ -89,7 +87,6 @@ const TabInner = styled(Box)(({theme})=>({
     backgroundImage: "linear-gradient(180deg, #222326, #131315)",
     borderRadius: "inherit",
     flex:"1 0 0",
-    transition: "visibility 0s, opacity 0.5s linear",
     [`@media (max-width: ${theme.breakpoints.values.sm}px)`]:{
         padding: " 8px 16px",
         fontFamily: "Oxanium",
@@ -107,7 +104,6 @@ const TabInner = styled(Box)(({theme})=>({
 }))
 
 const Title = styled(Typography)(({theme,active})=>({
-    fontFamily: "Oxanium",
     fontSize: "20px",
     fontStyle: "normal",
     fontWeight: "600",
@@ -119,7 +115,6 @@ const Title = styled(Typography)(({theme,active})=>({
 }));
 const Description = styled(Typography)(({theme})=>({
     color: "var(--Neutral-300, #9A9DAB)",
-    fontFamily: "Oxanium",
     fontSize: "14px",
     fontStyle: "normal",
     fontWeight: "400",
@@ -156,8 +151,8 @@ const Tabs = ({isSmallScreen , activeTab , tabsData=[], handleActive,...props})=
     return (<>{
         tabsData.map((tab,index)=>{
             let active = activeTab == index.toString();
-                return (<Tab key={tab.title} active={active.toString()}  onClick={(event)=>onTabClick(event,index)} >
-              <TabInner>
+                return (<Tab  className='font-Oxanium ' key={tab.title} active={active.toString()}  onClick={(event)=>onTabClick(event,index)} >
+              <TabInner className='transition-all' >
                 <Title  active={active.toString()}  > {!isSmallScreen ? tab.title : tab.subtitle }</Title>
                {!isSmallScreen &&(active) &&<Description>{tab.description}</Description>}
               </TabInner>
@@ -265,10 +260,10 @@ export default  () => {
         margin={"auto"}
         padding={'16px'}
         component={"section"}
-        className='bg-black'
+        className='bg-black font-Oxanium'
         id="Technology"
       >
-        {isSmallScreen ? (<GradientText className='lg:mt-0 mt-[48px]' >
+        {isSmallScreen ? (<GradientText className='lg:mt-0 mt-[48px] ' >
             Technological <br/> Foundations
         </GradientText>) : (<GradientText>
             Technological Foundations <br/> of META-V
@@ -282,7 +277,7 @@ export default  () => {
            {isSmallScreen&&tabsData.map((tab,index)=>{
                 let active = activeTab == index.toString();
                 if(!active) return;
-                return <Typography  key={index} variant='p' padding={ "16px"} fontSize={'14px'} fontWeight={400} lineHeight={'24px'} textAlign={"center"} color={"#FFF"}>{tab.description}</Typography>
+                return <Typography className='font-Oxanium'  key={index} variant='p' padding={ "16px"} fontSize={'14px'} fontWeight={400} lineHeight={'24px'} textAlign={"center"} color={"#9A9DAB"}>{tab.description}</Typography>
            })}  
           <IFrameContainers render3D={!isSmallScreen} tabsData={tabsData}  activeTab={activeTab}/>
         </Box>

@@ -8,6 +8,7 @@ import {
 import Image from "next/image";
 import logoImage from "@/assets/logo.svg";
 import telegramLogo from "@/assets/socialMedia/telegram.svg";
+import twitterLogo from "@/assets/socialMedia/twitter.svg";
 
 import { sampleMenu } from "./sampleMenu";
 
@@ -39,10 +40,15 @@ const socialShare = [
     link: "https://t.me/META_V_Official",
     image: telegramLogo,
   },
+    {
+    link: "https://twitter/META_V_Official",
+    image: twitterLogo,
+  },
  
 ];
 
 const SocialSection = () => {
+  
   return (
     <>
       <Box
@@ -57,6 +63,7 @@ const SocialSection = () => {
             flexDirection: "column", // Maintain vertical layout on smaller screens
           },
         }}
+        className="font-Oxanium"
       >
         <Box
           height={"1px"}
@@ -77,7 +84,6 @@ const SocialSection = () => {
           <Typography
             sx={{
               color: "#9A9DAB",
-              fontFamily: "Oxanium",
               fontSize: "14px",
               fontStyle: "normal",
               fontWeight: "400",
@@ -94,10 +100,10 @@ const SocialSection = () => {
             justifyContent={"flex-end"}
           >
             {socialShare.map((platform, index) => (
-              <Box width={"24px"} height={"24px"} key={index}>
+              <Box width={"24px"} height={"24px"} key={index}  >
               <Link href={platform.link} target="_blank">
                 <Box  width={"100%"} height={"100%"}>
-                  <Image src={platform.image} />
+                  <Image src={platform.image} className="hover:scale-110" />
                 </Box>
               </Link>
               </Box>
@@ -109,10 +115,8 @@ const SocialSection = () => {
   );
 };
 
-
-
-const Footer = () => {
-
+const Footer = (props) => {
+  const {scrollToId,selectedItem} = props;
   return (
       <Container className="w-full bg-gradient-to-r from-black  to-[#24243c]" margin={"auto"}>
         <Box
@@ -153,7 +157,6 @@ const Footer = () => {
                 color: "#FFF",
                 leadingTrim: "both",
                 textEdge: "cap",
-                fontFamily: "Oxanium",
                 fontSize: "20px",
                 fontStyle: "normal",
                 fontWeight: "600",
@@ -176,30 +179,31 @@ const Footer = () => {
             }}
           >
             {sampleMenu.map((menu, index) => (
-              <Link key={index} underline="none"  href={menu.link} >
+              
               <Typography
                 sx={{
+                  
                   whiteSpace: "nowrap",
                   padding: "12px 8px",
                   color: "#FFF",
-                  fontFamily: "Oxanium",
                   fontSize: "14px",
                   fontStyle: "normal",
                   fontWeight: "600",
                   lineHeight: "24px",
                   "&:hover":{
                   color:"#979BFF"
-                },
+                  },
                   "@media (max-width: 900px)": {
                     marginRight: "8px",
                     lineHeight: "24px",
                     padding: "4px 8px",
                   },
                 }}
+                className={`cursor-pointer hover:animate-pulse hover:scale-105 transition-all  ${selectedItem === 'meta' ? ' scale-105 text-[#1976d2]' : ''}`}
+                onClick={()=>scrollToId(menu.link.slice(1))}
               >
                 {menu.title}
               </Typography>
-              </Link>
             ))}
           </Box>
         </Box>

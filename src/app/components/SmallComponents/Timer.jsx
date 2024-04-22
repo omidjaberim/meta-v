@@ -77,39 +77,37 @@ export default function TimerCountDown({ time }) {
     <>
       <Box display="flex" alignItems="center" justifyContent="space-between" width={"100%"} >
        
-        <Box  className="border border-[#303136] text-gradient-to-r from-[#FED3CA] to-[#FFA998]" display="flex" flexDirection="column" alignItems="center"  sx={timerWrapperStyle} >
-          <Box sx={timerStyle}>
-            {countTime.time_days > 9 ? "" : 0}
-            {countTime.time_days}
-            <br />
-            <span style={timerValueStyle}>Day</span>
-          </Box>
+        <Box  
+          className="pt-[16px] pb-[8px]  bg-[#282828] w-[88px] h-[92px] rounded-[16px] border border-[#303136] text-gradient-to-r from-[#FED3CA] to-[#FFA998]" display="flex" flexDirection="column" alignItems="center"   >
+            <Box className="font-semibold	text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >
+              {countTime.time_days > 9 ? "" : 0}
+              {countTime.time_days}              
+            </Box>
+            <span className="text-[14px] leading-6 font-normal	text-white font-Oxanium">Day</span>          
         </Box>
-
-        <Box display="flex" flexDirection="column" alignItems="center" sx={timerWrapperStyle}>
-          <Box sx={timerStyle} >
+        <Box  
+          className="pt-[16px] pb-[8px]  bg-[#282828] w-[88px] h-[92px] rounded-[16px] border border-[#303136] text-gradient-to-r from-[#FED3CA] to-[#FFA998]" display="flex" flexDirection="column" alignItems="center"   >
+            <Box className="font-semibold	text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >            
             {countTime.time_Hours > 9 ? "" : 0}
             {countTime.time_Hours}
-            <br />
-            <span style={timerValueStyle}>{"Hours"}</span>
-          </Box>
+            </Box>
+            <span style={timerValueStyle}>{"Hours"}</span>          
         </Box>
-
-        <Box display="flex" flexDirection="column" alignItems="center" sx={timerWrapperStyle}>
-          <Box sx={timerStyle} >
+        <Box  
+          className="pt-[16px] pb-[8px]  bg-[#282828] w-[88px] h-[92px] rounded-[16px] border border-[#303136] text-gradient-to-r from-[#FED3CA] to-[#FFA998]" display="flex" flexDirection="column" alignItems="center"   >
+            <Box className="font-semibold	text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >            
             {countTime.time_Minusts > 9 ? "" : 0}
             {countTime.time_Minusts}
-            <br />
-            <span style={timerValueStyle}>{"Minutes"}</span>
-          </Box>
+            </Box>
+            <span style={timerValueStyle}>{"Minutes"}</span>          
         </Box>
-        <Box display="flex" flexDirection="column" alignItems="center" sx={timerWrapperStyle}>
-          <Box sx={timerStyle}>
+        <Box  
+          className="pt-[16px] pb-[8px]  bg-[#282828] w-[88px] h-[92px] rounded-[16px] border border-[#303136] text-gradient-to-r from-[#FED3CA] to-[#FFA998]" display="flex" flexDirection="column" alignItems="center"   >
+            <Box className="font-semibold	text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >          
             {countTime.time_seconds > 9 ? "" : 0}
             {countTime.time_seconds}
-            <br />
-            <span style={timerValueStyle}>{"Seconds"}</span>
-          </Box>
+            </Box>
+            <span style={timerValueStyle}>{"Seconds"}</span>          
         </Box>
       </Box>
     </>

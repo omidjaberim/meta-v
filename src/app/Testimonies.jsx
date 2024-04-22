@@ -13,7 +13,6 @@ import { AndrewBosworth, AuthorMuratDurmus, EricSchmidt, JensenHuang, MarkZucker
 const GradientText = styled(Box)(({theme})=>({
     width:"100%",
     textAlign: 'center',
-    fontFamily:"Oxanium",
     fontSize: '36px',
     fontStyle: 'normal',
     fontWeight: '400',
@@ -162,13 +161,14 @@ const Comments =({profile ,comment , ...props })=>{
             width:{xl : "416px" ,md:"416px" , xs : "368px" } , 
             padding:"24px" , 
             margin:"10px",
-            fontFamily:"Oxanium",
             background: "#131315",
             backdropFilter: "blur(16px)",
             borderRadius:"12px",
             cursor:"pointer",
 
-        }}>
+        }}
+          className="font-Oxanium text-[14px] leading-6 text-white"
+        >
         <Typography variant='p'  fontSize={'14px'} fontWeight={400} lineHeight={'24px'} color={"#FFF"}>  {comment} </Typography> 
         <Box display={"flex"} gap={"16px"} justifyContent={"center"} alignItems={"center"} >
 
@@ -190,7 +190,7 @@ const Comments =({profile ,comment , ...props })=>{
                   WebkitTextFillColor:'transparent',
                   backgroundClip:'text',
                 }} >  {profile.username} </Typography> 
-                <Typography variant='p'  fontSize={'12px'} fontWeight={400} lineHeight={'20px'} color={"#FFF"}>  {profile.description} </Typography> 
+                <Typography className="font-Oxanium" variant='p'  fontSize={'12px'} fontWeight={400} lineHeight={'20px'} color={"#9A9DAB"}>  {profile.description} </Typography> 
             </Box>
         </Box>    
         </Box>
@@ -222,10 +222,10 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
 
 const Testimonies = () => {
   return (<>
-  <Stack className="bg-black" component={"section"}  width={"100%"} justifyContent={"center"} gap={8} paddingY={{xl:"80px" , sm:"80px" , xs:"80px"  }} >
-      <GradientText>
+  <Stack className="bg-black " component={"section"}  width={"100%"} justifyContent={"center"} gap={8} paddingY={{xl:"80px" , sm:"80px" , xs:"80px"  }} >
+      <span className="mx-auto font-Oxanium text-[36px] leading-10 bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >
         The future of the metaverse
-      </GradientText>
+      </span>
     <CarouselWrapper/>
   </Stack>
 

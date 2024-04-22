@@ -110,7 +110,6 @@ const Gradient = styled(Box)(({ theme }) => ({
 const Title =  styled(Typography)(({theme})=>({  
 width: "100%",
 textAlign: "center",
-fontFamily: "Oxanium",
 fontSize: "36px",
 fontStyle: "normal",
 fontWeight: "400",
@@ -196,7 +195,6 @@ const Card = ({title,subtitle,points})=>{
         <Typography component={'span'} color={"#B887FF"} fontFamily={"Oxanium"} fontSize="20px" fontStyle={"normal"} fontWeight={"600"} lineHeight={"32px"}>{title}</Typography>
     </Box>
     <Typography component={'div'}  color={"#FFF"} fontFamily={"Oxanium"} fontSize="20px" fontStyle={"normal"} fontWeight={"600"} lineHeight={"32px"}>{subtitle}</Typography>
-
     <Box component={'ul'} paddingLeft={"16px"} color={"#9A9DAB"} fontFamily={"Roboto"} fontSize="16px" fontStyle={"normal"} fontWeight={"400"} lineHeight={"140%" } maxHeight={'max-content'} display={"flex"} flexDirection={"column"}>
      {points.map((point,index)=>{
         return <Box key={point+index} component={"li"}>{point}</Box>
@@ -233,8 +231,7 @@ const roadMapData = [{
 const Roadmap = ()=>{
     return (
     <RoadMapWrapper id='roadmap'  margin={"auto"} className='bg-black w-full' >
-      <RoadMapContainer className='mt-[286px] lg:mt-0' >
-      <Gradient/>
+      <RoadMapContainer className='mt-[216px] lg:mt-0' >
       <Title className='mt-[80px]' >RoadMap</Title>
       <CardWrapper>
       {

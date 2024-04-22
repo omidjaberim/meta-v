@@ -10,17 +10,29 @@ import Tokenomics from "./Tokenomics";
 import Roadmap from "./Roadmap";
 import FaqSection from "./FaqSection";
 import Footer from "./Footer";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 
 export default function App() {
   const aboutRef = useRef()
-
+  const [selectedItem,setSelectedItem] = useState<string>("meta")
+  const scrollToY = (y:number)=>{
+    scrollTo(0, y)
+    setSelectedItem("meta")
+  }
+  const scrollToId = (id:string)=>{
+    if(id === "meta") scrollToY(0);
+    document.getElementById(id)?.scrollIntoView({
+      behavior : 'smooth',
+      block : 'center',
+      inline : "center"
+    });
+    setSelectedItem(id)
+  }
   return (      
-    <Grid className="w-full bg-black flex justify-center" >    
-      <Grid className="max-w-[1440px] flex flex-col items-center justify-center relative scroll-smooth bg-black bg-[url('/Main.svg')] bg-top bg-no-repeat " sx={{backgroundSize:"1340px contain"}}  >
-        <Grid className="w-full bg-[url('/rectangleBg.svg')] bg-no-repeat bg-top bg-contain" >
-          <Header ref={aboutRef} />
+    <Grid className="w-full  flex justify-center bg-black" >
+      <div className="lg:max-w-[1440px] w-full flex-col items-center justify-center relative" >         
+          <Header ref={aboutRef} scrollToId={scrollToId} selectedItem={selectedItem} />
           <MarketListingTime />
           <Testimonies />
           <AboutSection ref={aboutRef} />
@@ -28,10 +40,10 @@ export default function App() {
           <Tokenomics/>
           <Roadmap/>
           <FaqSection/>
-          <Footer/>
-        </Grid>
-      </Grid>
-      </Grid>
+          <Footer scrollToId={scrollToId} selectedItem={selectedItem} />
+      </div>  
+    </Grid>
+      
 
   );
 }
