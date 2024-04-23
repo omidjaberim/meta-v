@@ -9,9 +9,9 @@ import {
   import React, { useContext, useEffect, useState } from "react";
   import {
     bnbIcon,
-    logo,
     usdcIcon,
     usdtIcon,
+    logoN
   } from "./SmallComponents/Images";
   import {
     StyledButton,
@@ -207,10 +207,10 @@ import {
     };
   
     return (
-      <Box zIndex={1} width={{xs:"100%",xl:"max-content" , md:"max-content"}} className="font-Oxanium" >
+      <Box  width={{xs:"100%",xl:"max-content" , md:"max-content"}} className="font-Oxanium z-20" >
         <Loading loading={loading} />
         <ToastNotify alertState={alertState} setAlertState={setAlertState} />
-        <Stack gap={{xl:2 , md:2 , xs:2}} maxWidth={'100%'} px={{ xs: 0, sm: 4  }} width={"100%"} alignItems={"center"} justifyContent={"center"}>
+        <Stack  gap={{xl:2 , md:2 , xs:2}} maxWidth={'100%'} px={{ xs: 0, sm: 4  }} width={"100%"} alignItems={"center"} justifyContent={"center"}>
           <Typography
             variant="h1"
             sx={{
@@ -234,7 +234,7 @@ import {
             py: 4,            
             gap: 2,
           }}
-          className="rounded-3xl"
+          className="rounded-3xl border-[#36303C] border-t-[3px] border-x-2"
         >
           <Stack
             flexDirection={{ xs: "column", md: "row" }}
@@ -643,7 +643,7 @@ import {
                           }
                           sx={{
                             width: "20px",
-                            marginRight: { xs: "6px", md: "8px" },
+                            marginRight: { xs: "6px", md: "20px" },
                             marginLeft: { xs: "-10px", md: "0px" },
                             marginTop: { xs: "-3px", sm: "-3px" },
                           }}
@@ -668,11 +668,11 @@ import {
                       <InputAdornment position="end">
                         <Box
                           component={"img"}
-                          alt=""
-                          src={logo.src}
+                          alt="logo"
+                          src={logoN.src}
                           sx={{
                             width: "20px",
-                            marginRight: { xs: "6px", md: "8px" },
+                            marginRight: { xs: "6px", md: "20px" },
                             marginLeft: { xs: "-10px", md: "0px" },
                             marginTop: { xs: "-3px", sm: "-3px" },
                           }}

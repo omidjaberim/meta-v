@@ -169,20 +169,11 @@ const Footer = (props) => {
           <Box
             display={"flex"}
             gap={"32px"}
-            sx={{
-              "@media (max-width: 600px)": {
-                gap: "8px",
-                alignItems: "flex-start",
-                flexWrap: "wrap",
-                justifyContent: "flex-start",
-              },
-            }}
+            className="hidden md:flex"
           >
-            {sampleMenu.map((menu, index) => (
-              
+            {sampleMenu.map((menu, index) => (              
               <Typography
-                sx={{
-                  
+                sx={{                  
                   whiteSpace: "nowrap",
                   padding: "12px 8px",
                   color: "#FFF",
@@ -194,9 +185,9 @@ const Footer = (props) => {
                   color:"#979BFF"
                   },
                   "@media (max-width: 900px)": {
-                    marginRight: "8px",
+                    marginRight: "2px",
                     lineHeight: "24px",
-                    padding: "4px 8px",
+                    padding: "2px 8px",
                   },
                 }}
                 className={`cursor-pointer hover:animate-pulse hover:scale-105 transition-all  ${selectedItem === 'meta' ? ' scale-105 text-[#1976d2]' : ''}`}

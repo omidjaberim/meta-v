@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
 
     screens: {
-      'sm': '360px',
-      // => @media (min-width: 360px) { ... }
+      'sm': '344px',
+      // => @media (min-width: 344px) { ... }
       'md': '640px',
       // => @media (min-width: 640px) { ... }
       'lg': '820px',
@@ -23,11 +23,16 @@ const config: Config = {
       'Roboto': ['Roboto','ui-serif', 'Arial'],
     },
     extend: {
+      rotate: {
+        '320': '350deg',
+      },
       backgroundImage: {
         'hero-pattern': "url('/marketListBg.svg')",
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require("@xpd/tailwind-3dtransforms")
+  ],
 };
 export default config;

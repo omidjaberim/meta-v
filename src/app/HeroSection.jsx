@@ -197,51 +197,13 @@ const GradientCircle = styled(Box)(({theme})=>({
 
 
 
-let SplineScene = ({scene})=>{
-  return (
-  <Box className="flex justify-center items-center" style={{
-        objectFit:"contain",
-        maxWidth:"100%",
-        width:"100%",
-       "@media (max-width: 1110px)": {
-              width:"100%",
-              maxWidth:"310px",
-        },
-      } }> 
-            <Image src={scene.previewImage} width={420} height={340} className='cursor-cell' style={{animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite , bounce 3s infinite"}} />
-  </Box>
-  )}
-
-const SplineWithPreview =({scene,active})=>{
-  if(!active) return
-  return (
-        <Box sx={{
-          display:"flex",
-          width:"100%",
-          height:"100%",
-          margin :"auto auto",
-          justifyContent:"center",
-
-          }}>
-            <SplineScene className="w-[350px] h-[300px]" scene={scene}/>
-         </Box>
-         )
-}
-
 
 const IFrameContainers = ({ activeTab , tabsData=[],})=>{
-  
-  return (<>
-
+  return (
     <IFrameContainer>
-    <GradientCircle/>
-
-    {tabsData.map((tab,index)=>{
-    let active = activeTab == index.toString();
-      return <SplineWithPreview key={index}  active={active} scene = {tab.scene} />
-    })}
-      </IFrameContainer>
-  </>
+    <GradientCircle/>    
+    <Image src={tabsData[activeTab].scene.previewImage} alt="" width={507} height={282} />
+    </IFrameContainer>
   )
 }
 

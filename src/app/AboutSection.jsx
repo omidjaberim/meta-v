@@ -197,15 +197,6 @@ const useStyles = makeStyles((theme) => ({
     
         },
 
-        sectionTopImg : {
-            width: '90.097px',
-            height: '24px',
-            marginRight: '8px',
-            
-        },
-        metaV : {
-            fontSize: '32px',
-        },
         sectionDescription : {
             color: 'var(--Neutral-300, #9A9DAB)',
             textAlign: 'center',
@@ -222,10 +213,10 @@ const About =  forwardRef((props,ref)=>{
   return (
     <section id='about' className={classes.frame29 + " bg-black font-Oxanium"} ref={ref} >
         <div className={classes.sectionText}>
-            <div className={classes.sectionTop + " mt-[56px] lg:mt-0"} >
-                <img src={aboutImage.src} className={classes.sectionTopImg} alt="about"></img>
-                <div className={classes.metaV}>META-V</div>
-                <span className='bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text mx-3' >LLC Company</span>
+            <div className={classes.sectionTop + " mt-[96px] lg:mt-0"} >
+                <img src={aboutImage.src} className="w-[60.097px] h-[18px] mr-[4px] md:w-[90.097px] md:h-[24px] md:mx-[4px]" alt="about"></img>
+                <div className={classes.metaV + " md:text-[32px] text-[16px]"}>META-V</div>
+                <span className='bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text mx-1 md:mx-3' >LLC Company</span>
             </div>
             <div className={classes.sectionDescription +" flex md:hidden"}>                 
                 `META-V embodies the essence of a second life, a realm where dreams once confined to the realm of aspiration in the real world are transformed into reality without boundaries. This innovative metaverse offers an unparalleled opportunity for everyone to

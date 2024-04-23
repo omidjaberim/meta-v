@@ -12,8 +12,12 @@ import FaqSection from "./FaqSection";
 import Footer from "./Footer";
 import { useRef, useState } from "react";
 
+import { Application } from '@splinetool/runtime';
+
+
 
 export default function App() {
+
   const aboutRef = useRef()
   const [selectedItem,setSelectedItem] = useState<string>("meta")
   const scrollToY = (y:number)=>{
@@ -29,9 +33,11 @@ export default function App() {
     });
     setSelectedItem(id)
   }
-  return (      
-    <Grid className="w-full  flex justify-center bg-black" >
-      <div className="lg:max-w-[1440px] w-full flex-col items-center justify-center relative" >         
+
+  return (  
+        
+    <Grid className="w-full  flex justify-center bg-black " >
+      <div className="lg:max-w-[1440px] w-full flex-col items-center justify-center relative " >         
           <Header ref={aboutRef} scrollToId={scrollToId} selectedItem={selectedItem} />
           <MarketListingTime />
           <Testimonies />
@@ -39,7 +45,6 @@ export default function App() {
           <HeroSection />
           <Tokenomics/>
           <Roadmap/>
-          <FaqSection/>
           <Footer scrollToId={scrollToId} selectedItem={selectedItem} />
       </div>  
     </Grid>

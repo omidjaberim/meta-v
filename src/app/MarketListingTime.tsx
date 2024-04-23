@@ -7,31 +7,7 @@ import {
 import PresaleBox from "@/app/components/PresaleBox";
 import Image from "next/image"
 import ArrowRight from "@/assets/arrowRight.svg"
-const Section = styled(Box)(({ theme }) => ({
-  position:"relative",
-  overflow: "hidden",
-  display: "flex",
-  padding: "32px 80px",
-  flexDirection: "column",
-  alignItems: "center",
-  gap: "30px",
-  borderTop: "1px solid rgba(255, 255, 255, 0.16)", 
-  maxWidth:"100%", 
-  paddingTop: "100px",
-  [`@media (max-width: ${theme.breakpoints.values.md}px)`]: {
-    gap: "16px",
-    padding: "32px",
-    width: "100%",
-    paddingTop: "40px",
-  },
-  [`@media (max-width: ${theme.breakpoints.values.sm}px)`]: {
-    gap: "16px",
-    padding: "16px",
-    width: "100%",
-    paddingTop: "32px",
-  },
-}))
-
+import ThreeDMesh from "./3d";
 
 
 const PresaleSection = ()=>{
@@ -55,46 +31,51 @@ const PresaleSection = ()=>{
     }
 
     return (
-      <Grid className="w-full backdrop-blur-xl backdrop-brightness-150 bg-[url('/horizontalLineBg.svg'),url('/verticalLineBg.svg')] bg-top bg-no-repeat" 
-        sx={{fill:"linear-gradient(270deg, rgba(11, 11, 12, 0.64) 0%, rgba(34, 35, 38, 0.64) 21.5%, rgba(34, 35, 38, 0.64) 76.5%, rgba(1, 2, 10, 0.34) 100%)"}} >
-      <Grid className="w-full flex h-[1140px] backdrop-brightness-150 bg-gradient-to-b from-[rgba(187,143,238,0.7)]  to-black"   >
-      <Grid className="w-full bg-[url('/rectangleBg.svg')] bg-no-repeat bg-top bg-contain" >
-        <div 
-          id="presale" 
-          className="w-full font-Roboto flex justify-center items-center flex-col relative" 
-          >
-            <div className="w-full  inset-0 z-0" >
-              <Image alt="bg" src={"/star-img.svg"} width={24} height={24} className="absolute z-50 top-[32%] left-[10%]" style={{animation: 'pulse 2.2s cubic-bezier(0.4, 1, 0.6, 1) infinite'}} />
-              <Image alt="bg" src={"/star3.svg"} width={22} height={22} className="absolute z-50 top-[52%] left-[35%]" style={{animation: 'pulse 2.3s cubic-bezier(0.4, 1, 0.6, 1) infinite'}}/>
-              <Image alt="bg" src={"/star2.svg"} width={16} height={16} className="absolute z-50 top-[72%] left-[15%]" style={{animation: 'pulse 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
-              <Image alt="bg" src={"/star3.svg"} width={22} height={22} className="absolute z-50 top-[92%] left-[3%] " style={{animation: 'pulse 3.6s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
-              <Image alt="bg" src={"/star-img.svg"} width={28} height={28} className="absolute z-50 top-[12%] right-[4%] " style={{animation: 'pulse 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
-              <Image alt="bg" src={"/star3.svg"} width={16} height={16} className="absolute z-50 top-[32%] right-[8%]" style={{animation: 'pulse 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
-              <Image alt="bg" src={"/star2.svg"} width={14} height={14} className="absolute z-50 top-[82%] right-[18%] " style={{animation: 'pulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
-              <Image alt="bg" src={"/star3.svg"} width={18} height={18} className="absolute z-50 top-[92%] right-[38%] " style={{animation: 'pulse 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
+      <Grid className="w-full backdrop-blur-xl backdrop-brightness-150 bg-[url('/horizontalLineBg.svg'),url('/verticalLineBg.svg')] bg-top bg-no-repeat  " 
+          sx={{fill:"linear-gradient(270deg, rgba(11, 11, 12, 0.64) 0%, rgba(34, 35, 38, 0.64) 21.5%, rgba(34, 35, 38, 0.64) 76.5%, rgba(1, 2, 10, 0.34) 100%)",pointerEvents: "none",userSelect: "none"}} >            
+        <Grid className="w-full flex h-[1140px] backdrop-brightness-150 bg-gradient-to-b from-[rgba(187,143,238,0.7)]  to-black "   >
+          <Grid className="w-full relative px-[16px] md:px-0 bg-[url('/Background/Background/B---33.png')] bg-no-repeat bg-top" >            
+              {/* <div className="absolute z-10 top-0 w-full h-[100%] overflow-hidden" >
+                 <div className="w-[120%] bg-[rgb(0,0,0,.6)] -rotate-45 transform aspect-square absolute sm:bottom-[70%] md:bottom-[60%] lg:bottom-[80%] overflow-hidden" style={{transformOrigin:" 70% 70%"}}  >
+                    <Image src="/Rectangle3361.jpg" alt="" width={450} height={240} className="w-full h-full rotate-45 transform" style={{transformOrigin:" -22% 28%"}} />
+                </div>
+              </div>                */}
+            <div 
+              id="presale" 
+              className="w-full font-Roboto flex justify-center items-center flex-col relative px-1"
+              >
+                <div className="w-full  inset-0 z-0" >
+                  <Image alt="bg" src={"/star-img.svg"} width={24} height={24} className="absolute z-50 top-[32%] left-[10%]" style={{animation: 'pulse 2.2s cubic-bezier(0.4, 1, 0.6, 1) infinite'}} />
+                  <Image alt="bg" src={"/star3.svg"} width={22} height={22} className="absolute z-50 top-[52%] left-[35%]" style={{animation: 'pulse 2.3s cubic-bezier(0.4, 1, 0.6, 1) infinite'}}/>
+                  <Image alt="bg" src={"/star2.svg"} width={16} height={16} className="absolute z-50 top-[72%] left-[15%]" style={{animation: 'pulse 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
+                  <Image alt="bg" src={"/star3.svg"} width={22} height={22} className="absolute z-50 top-[92%] left-[3%] " style={{animation: 'pulse 3.6s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
+                  <Image alt="bg" src={"/star-img.svg"} width={28} height={28} className="absolute z-50 top-[12%] right-[4%] " style={{animation: 'pulse 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
+                  <Image alt="bg" src={"/star3.svg"} width={16} height={16} className="absolute z-50 top-[32%] right-[8%]" style={{animation: 'pulse 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
+                  <Image alt="bg" src={"/star2.svg"} width={14} height={14} className="absolute z-50 top-[82%] right-[18%] " style={{animation: 'pulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
+                  <Image alt="bg" src={"/star3.svg"} width={18} height={18} className="absolute z-50 top-[92%] right-[38%] " style={{animation: 'pulse 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
+                </div>
+                <div  className="z-20 pb-1 mt-[90px]">
+                    <Typography sx={typoStyle} display={"flex"} flexWrap={"wrap"} gap={{ xs:"2px", md:"2px", xl:"8px" }} width={"100%"} justifyContent={"center"}>
+                    <Box component="span"  whiteSpace={"nowrap"} ml={{lg:"8px" ,xs:"8px"}}  >META-V,</Box>  
+                    <Box component="span"   ml={{lg:"8px" ,xs:"8px"}} >Epitomizes a</Box>  
+                    <Box component="span"  ml={{lg:"8px" ,xs:"8px"}} sx={{
+                            color: "rgba(256,256,256,0.16)",
+                        WebkitTextFillColor: "rgba(256,256,256,0.16)",
+                        WebkitTextStroke: "1px white",
+                    }} >Secound Life</Box>
+                    </Typography>
+                    <Typography  sx={subTypeStyle}  >
+                        The convergence of reality and innovation, where aspirations are converted into digital realms.
+                    </Typography>
+                    <Typography className="flex justify-center pt-[24px] pb-[40px] text-white leading-5	font-semibold" >
+                        Audit <Image src={ArrowRight} alt="audit" className="mx-1" />
+                    </Typography>
+                </div>
+                <PresaleBox />
             </div>
-            <div  className="z-20 pb-1 mt-[90px]">
-                <Typography sx={typoStyle} display={"flex"} flexWrap={"wrap"} gap={{ xs:"2px", md:"2px", xl:"8px" }} width={"100%"} justifyContent={"center"}>
-                <Box component="span"  whiteSpace={"nowrap"} ml={{lg:"8px" ,xs:"8px"}}  >META-V,</Box>  
-                <Box component="span"   ml={{lg:"8px" ,xs:"8px"}} >Epitomizes a</Box>  
-                <Box component="span"  ml={{lg:"8px" ,xs:"8px"}} sx={{
-                        color: "rgba(256,256,256,0.16)",
-                    WebkitTextFillColor: "rgba(256,256,256,0.16)",
-                    WebkitTextStroke: "1px white",
-                }} >Secound Life</Box>
-                </Typography>
-                <Typography  sx={subTypeStyle}>
-                    The convergence of reality and innovation, where aspirations are converted into digital realms.
-                </Typography>
-                <Typography className="flex justify-center pt-[24px] pb-[0px] text-white leading-5	font-semibold" >
-                    Audit <Image src={ArrowRight} alt="audit" className="mx-1" />
-                </Typography>
-            </div>
-            <PresaleBox />
-        </div>
+          </Grid>
         </Grid>
-        </Grid>
-        </Grid>
+      </Grid>
       )
 } 
 

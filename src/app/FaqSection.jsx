@@ -12,8 +12,7 @@ import minus from "@/assets/minus-icon.svg";
 import plus from "@/assets/plus-icon.svg";
 import Image from "next/image";
 import gridLine from "@/assets/gridLine.svg";
-import FaqImg from "@/assets/webglPreview/BlackGlassCube.png";
-import { ModelViewer } from './components/model-viewer';
+import faq from "@/assets/webglPreview/BlackGlassCube.png" 
 
 const ExpandPlusMinus = ({ isExpanded }) => {
   return (
@@ -229,9 +228,10 @@ const FaqSection = () => {
           FAQ
         </GradientText>        
         <Box 
-          className="flex w-full flex-1 sm:flex-col md:flex-row"
+          className="flex w-full flex-1 sm:flex-col-reverse md:flex-row"
         >
-          <FaqWrapper zIndex={1} className="sm:w-full md:w-1/2">
+          <div className="md:w-full lg:w-1/2">
+          <FaqWrapper zIndex={1} >
             {sampleFaqs.map((faq, index) => (
               <FAQ
                 key={faq.question}
@@ -243,18 +243,15 @@ const FaqSection = () => {
               ></FAQ>
             ))}             
           </FaqWrapper>
-          <Box className="sm:w-full md:w-1/2" >
-          <Image src={FaqImg} width={350} height={450} />
-            {/*  */}
-            {/* <Spline scene="https://prod.spline.design/xEAEuMGb0xjefjee/scene.splinecode"  /> */}
-            {/* <ModelViewer /> */}
-          </Box> 
+          </div>
+          <div className="md:w-full lg:w-1/2 flex justify-center items-center" > 
+            <Image src={faq} width={240} height={240}  />
+          </div>
         </Box>
-        <Image alt="bg" src={"/star2.svg"} width={16} height={16} className="absolute z-50 top-[52%] right-[15%]" style={{animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
-        <Image alt="bg" src={"/star2.svg"} width={22} height={22} className="absolute z-50 top-[12%] right-[36%]" style={{animation: 'pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
-        <Image alt="bg" src={"/star3.svg"} width={32} height={32} className="absolute z-50 top-[22%] right-[28%]" style={{animation: 'pulse 2.9s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
-        <Image alt="bg" src={"/star3.svg"} width={26} height={26} className="absolute z-50 top-[72%] right-[45%]" style={{animation: 'pulse 3.4s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
-        <GradientCircle />
+        <Image alt="bg" src={"/star2.svg"} width={16} height={16} className="absolute z-50 top-[52%] right-[15%]" style={{animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',pointerEvents: "none",userSelect: "none"}} />
+        <Image alt="bg" src={"/star2.svg"} width={22} height={22} className="absolute z-50 top-[12%] right-[36%]" style={{animation: 'pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',pointerEvents: "none",userSelect: "none"}} />
+        <Image alt="bg" src={"/star3.svg"} width={32} height={32} className="absolute z-50 top-[22%] right-[28%]" style={{animation: 'pulse 2.9s cubic-bezier(0.4, 0, 0.6, 1) infinite',pointerEvents: "none",userSelect: "none"}} />
+        <Image alt="bg" src={"/star3.svg"} width={26} height={26} className="absolute z-50 top-[72%] right-[45%]" style={{animation: 'pulse 3.4s cubic-bezier(0.4, 0, 0.6, 1) infinite',pointerEvents: "none",userSelect: "none"}} />
       </Container>
   );
 };

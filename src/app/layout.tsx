@@ -6,7 +6,6 @@ import { bscTestnet } from "wagmi/chains";
 import { ConectivityProvider } from "./utils";
 
 
-
 // wallet start
 
 const projectId = "cba73ada547c01c1a64d7725fb732495";

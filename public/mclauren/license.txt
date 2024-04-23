@@ -1,0 +1,11 @@
+Model Information:
+* title:	2023 | Mclaren Solus GT | Update + Texture
+* source:	https://sketchfab.com/3d-models/2023-mclaren-solus-gt-update-texture-99e84ffd63d04cf091e2a8d202c93c99
+* author:	kevin (ケビン) (https://sketchfab.com/sohyalebret)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "2023 | Mclaren Solus GT | Update + Texture" (https://sketchfab.com/3d-models/2023-mclaren-solus-gt-update-texture-99e84ffd63d04cf091e2a8d202c93c99) by kevin (ケビン) (https://sketchfab.com/sohyalebret) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -221,15 +221,15 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
   }
 
 const Testimonies = () => {
-  return (<>
-  <Stack className="bg-black " component={"section"}  width={"100%"} justifyContent={"center"} gap={8} paddingY={{xl:"80px" , sm:"80px" , xs:"80px"  }} >
-      <span className="mx-auto font-Oxanium text-[36px] leading-10 bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >
+  return (
+  <Stack className="bg-black md:mt-0 mt-[180px] px-[16px] md:px-0" component={"section"}  width={"100%"} justifyContent={"center"} gap={8} paddingY={{xl:"80px" , sm:"80px" , xs:"80px"  }} >
+      <span className="mx-auto text-center sm:pt-[52px] font-Oxanium text-[36px] leading-10 bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >
         The future of the metaverse
       </span>
     <CarouselWrapper/>
   </Stack>
 
-  </>)
+  )
 };
 
 export default Testimonies;
