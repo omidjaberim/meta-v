@@ -4,7 +4,6 @@ import {
   Link,
   Typography,
 } from "@mui/material";
-
 import Image from "next/image";
 import logoImage from "@/assets/logo.svg";
 import telegramLogo from "@/assets/socialMedia/telegram.svg";
@@ -15,7 +14,7 @@ import { sampleMenu } from "./sampleMenu";
 const Container = styled(Box)(({ theme }) => ({
   overflow: "hidden",
   display: "flex",
-  padding: "32px 80px",
+  
   flexDirection: "column",
   alignItems: "flex-start",
   gap: "32px",
@@ -116,9 +115,10 @@ const SocialSection = () => {
 };
 
 const Footer = (props) => {
-  const {scrollToId,selectedItem} = props;
+  const {scrollToId} = props;
   return (
-      <Container className="w-full bg-gradient-to-r from-black  to-[#24243c]" margin={"auto"}>
+      <Container className="w-full bg-gradient-to-r from-black  to-[#24243c] " margin={"auto"}>
+        <div className="bg-[url('/footerNoise.png')] bg-repeat bg-auto w-full h-full py-[32px] px-[80px]" >
         <Box
           display={"flex"}
           width={"100%"}
@@ -129,7 +129,7 @@ const Footer = (props) => {
               whiteSpace: "nowrap",
               gap: "8px",
               alignItems: "flex-start",
-              flexDirection: "column", // Maintain vertical layout on smaller screens
+              flexDirection: "column", 
             },
             "@media (max-width: 600px)": {
               whiteSpace: "nowrap",
@@ -147,6 +147,7 @@ const Footer = (props) => {
             gap={"8px"}
             alignItems={"center"}
             whiteSpace={"nowrap"}
+            marginBottom={"32px"}
           >
             <Image
               style={{ width: "24px", height: "22.4px" }}
@@ -173,7 +174,8 @@ const Footer = (props) => {
           >
             {sampleMenu.map((menu, index) => (              
               <Typography
-                sx={{                  
+                sx={{   
+                  marginBottom:"26px",               
                   whiteSpace: "nowrap",
                   padding: "12px 8px",
                   color: "#FFF",
@@ -199,6 +201,7 @@ const Footer = (props) => {
           </Box>
         </Box>
         <SocialSection />
+        </div>
       </Container>
   );
 };

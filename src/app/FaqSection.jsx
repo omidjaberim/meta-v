@@ -106,13 +106,12 @@ const Container = styled(Box)(({ theme }) => ({
   overflow: "hidden",
   position: "relative",
   display: "flex",
-  padding: "80px 80px", 
+  paddingTop: "80px", 
   flexDirection: "column",
   alignItems: "flex-start",
   gap: "64px",
   alignSelf: "stretch",
   minHeight: "max-content",
-  height:"800px",
   backgroundSize: "contain",
   backgroundRepeat: "repeat",
   backgroundImage: `url(${gridLine})`,
@@ -138,11 +137,12 @@ const Container = styled(Box)(({ theme }) => ({
 }));
 
 const GradientText = styled("div")(({ theme, active }) => ({
-  textAlign: "center",
+  textAlign: "left",
   fontSize: "36px",
   fontStyle: "normal",
   fontWeight: "400",
   lineHeight: "44px",
+  marginBottom : '54px',
   background:
     "linear-gradient(93deg, #CDCFFF 16.47%, #FED6FF 49.36%, #FFE5DF 81.61%)",
   WebkitBackgroundClip: "text",
@@ -171,10 +171,10 @@ const GradientText = styled("div")(({ theme, active }) => ({
 const Gradient = styled(Box)(({ theme }) => ({
   zIndex:0,
   position: "absolute",
-  top: "75%",
+  top: "110%",
   left: "100%",
-  width: "50%",
-  height: "50%",
+  width: "100%",
+  height: "180%",
   transform: "translate(-50%, -50%)",
   flexShrink: "0",
   borderRadius: "50%",
@@ -242,8 +242,8 @@ const FaqSection = () => {
   };
 
   return (
-      <Container id="FAQ"  margin={"auto"} component={"section"} className="bg-black w-full font-Oxanium" >        
-        <Grid className="w-full backdrop-blur-xl backdrop-brightness-150 bg-[url('/horizontalLineBg.svg'),url('/verticalLineBg.svg')] bg-top bg-no-repeat  " >
+      <Container id="FAQ"  margin={"auto"} component={"section"} className="bg-black w-full font-Oxanium px-[28px]" >        
+        <Grid className="w-full h-full backdrop-blur-xl backdrop-brightness-150 bg-[url('/horizontalLineBg.svg'),url('/verticalLineBg.svg')] bg-top bg-no-repeat bg-cover  " >
         <GradientText className='mt-[116px] lg:mt-[20px]' >
           FAQ
         </GradientText>        
@@ -251,7 +251,7 @@ const FaqSection = () => {
           className="flex w-full flex-1 sm:flex-col md:flex-row"
         >
           <div className="md:w-full lg:w-1/2">
-          <FaqWrapper zIndex={1} >
+          <FaqWrapper zIndex={1} className="mb-[144px]">
             {sampleFaqs.map((faq, index) => (
               <FAQ
                 key={faq.question}

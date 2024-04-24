@@ -33,7 +33,7 @@ const PresaleSection = ()=>{
     return (
       <Grid className="w-full backdrop-blur-xl backdrop-brightness-150 bg-[url('/horizontalLineBg.svg'),url('/verticalLineBg.svg')] bg-top bg-no-repeat  " 
           sx={{fill:"linear-gradient(270deg, rgba(11, 11, 12, 0.64) 0%, rgba(34, 35, 38, 0.64) 21.5%, rgba(34, 35, 38, 0.64) 76.5%, rgba(1, 2, 10, 0.34) 100%)",pointerEvents: "none",userSelect: "none"}} >            
-        <Grid className="w-full flex h-[1140px] backdrop-brightness-150 bg-gradient-to-b from-[rgba(187,143,238,0.7)]  to-black "   >
+        <Grid className="w-full flex sm:h-[1140px] lg:h-[1140px] backdrop-brightness-150 bg-gradient-to-b from-[rgba(187,143,238,0.7)]  to-black "   >
           <Grid className="w-full relative px-[16px] md:px-0 bg-[url('/Background/Background/B---33.png')] bg-no-repeat bg-top" >            
               {/* <div className="absolute z-10 top-0 w-full h-[100%] overflow-hidden" >
                  <div className="w-[120%] bg-[rgb(0,0,0,.6)] -rotate-45 transform aspect-square absolute sm:bottom-[70%] md:bottom-[60%] lg:bottom-[80%] overflow-hidden" style={{transformOrigin:" 70% 70%"}}  >
@@ -54,11 +54,11 @@ const PresaleSection = ()=>{
                   <Image alt="bg" src={"/star2.svg"} width={14} height={14} className="absolute z-50 top-[82%] right-[18%] " style={{animation: 'pulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
                   <Image alt="bg" src={"/star3.svg"} width={18} height={18} className="absolute z-50 top-[92%] right-[38%] " style={{animation: 'pulse 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
                 </div>
-                <div  className="z-20 pb-1 mt-[90px] flex flex-col items-center">
-                    <Typography sx={typoStyle} display={"flex"} flexWrap={"wrap"} gap={{ xs:"2px", md:"2px", xl:"8px" }} width={"100%"} justifyContent={"center"}>
-                    <Box component="span"  whiteSpace={"nowrap"} ml={{lg:"8px" ,xs:"8px"}}  >META-V,</Box>  
-                    <Box component="span"   ml={{lg:"8px" ,xs:"8px"}} >Epitomizes a</Box>  
-                    <Box component="span"  ml={{lg:"8px" ,xs:"8px"}} sx={{
+                <div  className="z-20 pb-1 mt-[110px] flex flex-col items-center">
+                    <Typography sx={typoStyle} className="flex-col md:flex-row leading-relaxed" display={"flex"} flexWrap={"wrap"}  gap={{ xs:"2px", md:"2px", xl:"8px" }} width={"100%"} justifyContent={"center"}>
+                    <Box component="span" className="text-[48px]" whiteSpace={"nowrap"} ml={{lg:"8px" ,xs:"8px"}}  >META-V,</Box>  
+                    <Box component="span" className="text-[48px]"  ml={{lg:"8px" ,xs:"8px"}} >Epitomizes a</Box>  
+                    <Box component="span" className="text-[48px]"  ml={{lg:"8px" ,xs:"8px"}} sx={{
                             color: "rgba(256,256,256,0.16)",
                         WebkitTextFillColor: "rgba(256,256,256,0.16)",
                         WebkitTextStroke: "1px white",

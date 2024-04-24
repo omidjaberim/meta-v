@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, styled } from '@mui/system';
-import { Typography, useTheme } from '@mui/material';
+import { Typography } from '@mui/material';
 import Image from "next/image";
 
 const Container = styled(Box)(({theme})=>({  
@@ -52,7 +52,6 @@ const TokenShareWrapper = styled(Box)(({theme})=>({
     }
 
 }));
-
 
 const Title = styled(Box)(({theme})=>({
     textAlign: 'center',
@@ -112,12 +111,12 @@ const tokenShareData = [
 ]
 const Tokenomics = ()=>{
     return(
-        <Container id="tokenomics"   className='bg-black font-Oxanium  flex flex-col' >
-           <Title className='mt-[75px]' >Tokenomics</Title>
+        <Container id="tokenomics"   className="bg-black  flex flex-col " >
+           <Title className='mt-[75px] text-[28px] font-Oxanium font-bold' >Tokenomics</Title>
             <TokenShares>
                 {tokenShareData.map((share,index)=>{
                     return (
-                    <TokenShareWrapper key={index} className='hover:animate-pulse hover:scale-105 transition-all' > 
+                    <TokenShareWrapper key={index} className="hover:animate-pulse hover:scale-105 transition-all bg-[url('/tokenNoise.png')] bg-auto" > 
                         <Box borderRadius={'12px'} display={"flex"} flexDirection={"column"} alignItems={"center"} padding={"16px"} width={"100%"} height={"100%"}  style={{backgroundImage:"linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(184, 135, 255, 0.32) 80%)"}}  >
                             <Typography  whiteSpace={'nowrap'} fontSize={'14px'} fontWeight={400} lineHeight={'24px'} color={"#FFF"}> {share.type} </Typography> 
                             <Typography  whiteSpace={'nowrap'} fontSize={'28px'} fontWeight={600} lineHeight={'36px'} color={"#FFF"}> {share.percentage} </Typography> 
@@ -128,7 +127,7 @@ const Tokenomics = ()=>{
             </TokenShares>
             <Box className="relative w-full h-full flex justify-center items-center mt-[40px] transition-all" >
                 <Image src={"/assets/ring.svg"} alt="ring-meta" width={450} height={450} className="w-full h-full animate-pulse	"  />     
-                <Image alt='' width={170} height={100} src={"/tokensRemain.png"} className='absolute top-[52%] text-[#FFAE9C] ' />
+                <Image alt='' width={170} height={100} src={"/tokensRemain.png"} className='w-[32%] absolute top-[52%] text-[#FFAE9C] ' />
             </Box>
         </Container>
     )

@@ -4,23 +4,13 @@ import { Box,  styled } from '@mui/system';
 import { Typography } from '@mui/material';
 import Image from "next/image"
 import arrowImage from "@/assets/ArrowUp.png"
-
 import { Grid } from '@mui/material';
-const RoadMapWrapper = styled(Box)(({theme})=>({  
-display: "flex",
-flexDirection:"column",
-padding: "0px 60px",
-justifyContent: "space-between",
-alignItems: "flex-start",
-flexShrink: "0",
-}));
-
 
 const RoadMapContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   display: "flex",
   gap: "50px",
-  padding: "0px 74px",
+  padding: "0px ",
   justifyContent: "flex-start",
   alignItems: "flex-start",
   flexShrink: "0",
@@ -33,7 +23,7 @@ const Gradient = styled(Box)(({ theme }) => ({
   position: "absolute",
   top: "50%",
   left: "50%",
-  width: "50%",
+  width: "75%",
   height: "50%",
   transform: "translate(-50%, -50%)",
   flexShrink: "0",
@@ -88,9 +78,7 @@ backgroundClip:'text',
 }))
 
 const CardStyle = styled(Box)(({theme})=>({  
-       display: "flex",
-       width: "224px",
-       minWidth: "224px",
+       display: "flex",       
        padding: "16px",
        flexDirection: "column",
        alignItems: "flex-start",
@@ -99,14 +87,11 @@ const CardStyle = styled(Box)(({theme})=>({
        border: "1px solid  rgba(255, 255, 255, 0.05)",
        justifyItems:"start", 
 }));
-
-
-
-
-const Card = ({title,subtitle,points})=>{
+const Card = ({title,subtitle,points,mt})=>{
     return (
       <CardStyle 
-          className='bg-[#000] hover:scale-105 transition-all font-Oxanium h-[380px]' 
+          className={`w-full md:w-[224px] bg-[url('/roadmapNoise.png')] bg-cover bg-black hover:scale-105 transition-all font-Oxanium md:h-[380px] `}
+          sx={{marginTop:{xs:0,xl:mt}}} 
         >
         <Box  display={"flex"} alignItems={"center"} gap={"8px"} alignSelf={"stretch"}>
             <Image  src={arrowImage} width={"24px"} height={"24px"}/>
@@ -115,7 +100,7 @@ const Card = ({title,subtitle,points})=>{
         <Typography component={'div'}  color={"#FFF"}  fontSize="20px" fontStyle={"normal"} fontWeight={"600"} lineHeight={"32px"}>{subtitle}</Typography>
         <ol className='pl-[16px] text-[#9A9DAB] text-[16px] leading-7 flex flex-col' >
         {points.map((point,index)=>{
-            return <li key={point+index} className='flex justify-center items-baseline' ><div className=' mr-2 rounded-[5px] w-[5px] p-[4px] bg-[#9A9DAB]' ></div> {point}</li>
+            return <li key={point+index} className='flex justify-start items-baseline' ><div className=' mr-2 rounded-[5px] w-[5px] p-[4px] bg-[#9A9DAB]' ></div> {point}</li>
         })}   
         </ol>
       </CardStyle>
@@ -149,21 +134,21 @@ const roadMapData = [{
 
 const Roadmap = ()=>{
     return (
-          <RoadMapWrapper id='roadmap'  margin={"auto"} className='bg-black w-full h-full' >
-            <Grid className="w-full h-full backdrop-blur-xl backdrop-brightness-150 bg-[url('/horizontalLineBg.svg'),url('/verticalLineBg.svg')] bg-top bg-no-repeat" >
-            <RoadMapContainer className='mt-[216px] lg:mt-0' >
-            <Title className='mt-[80px]' >RoadMap</Title>
-            <Grid className='w-full grid xl:grid-cols-5 gap-4 lg:grid-cols-3  md:grid-cols-2 grid-cols-1 place-content-center	 place-items-center	place-self-center' >
-            {
-                roadMapData.map((data,index)=>{
-                return <Card key={index} title={data.title} subtitle={data.subtitle} points={data.points}></Card>
-                })
-            }
+          <Grid id='roadmap'  className='w-full  flex flex-col px-0 py-[60px] items-center  '  >
+            <Grid  className="w-full h-full backdrop-blur-xl backdrop-brightness-150 bg-[url('/horizontalLineBg.svg'),url('/verticalLineBg.svg')] bg-top bg-no-repeat" >
+            <div className='mt-[216px] lg:mt-0 w-full h-full flex flex-col' >
+              <Title className='mt-[80px]' >RoadMap</Title>
+              <Grid className='w-full grid xl:grid-cols-5 gap-4 lg:grid-cols-3  md:grid-cols-2 grid-cols-1 place-content-center place-items-center	place-self-center' >
+              {
+                  roadMapData.map((data,index)=>{
+                  return <Card mt={index % 2 ? "280px":"0px" } key={index} title={data.title} subtitle={data.subtitle} points={data.points} />
+                  })
+              }
+              </Grid>
+              <Gradient/>
+            </div>
             </Grid>
-            <Gradient/>
-            </RoadMapContainer>
-            </Grid>
-          </RoadMapWrapper>
+          </Grid>
     )
 }
 

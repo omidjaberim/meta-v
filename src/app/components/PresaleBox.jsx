@@ -230,11 +230,10 @@ import {
         <Stack
           mt={6}
           sx={{
-            px: { xs: 2, sm: 4 },
-            py: 4,            
+                   
             gap: 2,
           }}
-          className="rounded-[26px] border-[#36303C] border-t-[3px] border-x-2 bg-[#231b2a] bg-[url('/Noise.png')] bg-cover"
+          className="px-[24px] py-[20px] rounded-[26px] border-[#36303C] border-t-[3px] border-x-2 bg-[#231b2ae3] bg-[url('/Noise.png')] bg-cover"
         >
           <Stack
             flexDirection={{ xs: "column", md: "row" }}
@@ -247,12 +246,12 @@ import {
               variant="h1"
               sx={{
                 color: "#EBE9ED",
-                fontSize: { xs: "20px", sm: "28px" },
+                fontSize: { xs: "28px", sm: "28px" },
                 lineHeight: { xs: "32px", sm: "36px" },
                 fontWeight: "600",
                 textAlign: "left",
               }}
-              className="flex items-center "
+              className="flex items-center mb-[8px]"
               
             >
               PreSale
@@ -284,11 +283,10 @@ import {
               sx={{
                 backgroundColor: "#352E3E",
                 borderRadius: "12px",
-                width: { xs: "97%", md: "fit-content" },
+                width: { xs: "100%", md: "fit-content" },
                 display: "flex",
                 alignItems: "center",
                 justifyContent: { xs: "space-between", md: "center" },
-                m: { xs: "auto", md: "0px" },
                 px: { xs: 1.5, md: 3 },
                 gap: { xs: 0, sm: 0.8 },
                 py: 1,
@@ -308,10 +306,11 @@ import {
                   style={{
                     color: "#B28FEE",
                   }}
+                  className="font-bold"
                 >
                   1
                 </span>{" "}
-                $META-V ={" "}
+                $META-V {" "}<span className="text-[#9A9DAB]" >=</span>
               </Typography>
               <Typography
                 variant="body1"
@@ -348,7 +347,7 @@ import {
               variant="h1"
               sx={{
                 color: "#75717F",
-                fontSize: { xs: "14px", sm: "16px" },
+                fontSize: { xs: "16px", sm: "16px" },
                 lineHeight: "30px",
                 fontWeight: "400",
                 textAlign: "center",
@@ -360,11 +359,10 @@ import {
               sx={{
                 backgroundColor: { xs: "#352E3E", md: "transparent" },
                 borderRadius: "12px",
-                width: { xs: "97%", md: "fit-content" },
+                width: { xs: "100%", md: "fit-content" },
                 display: "flex",
                 alignItems: "center",
                 justifyContent: { xs: "space-between", md: "center" },
-                m: { xs: "auto", md: "0px" },
                 px: { xs: 1.5, md: 3 },
                 gap: { xs: 0, sm: 0.8 },
                 py: 1,
@@ -437,7 +435,6 @@ import {
                       textAlign: "center",
                       px: 1,
                       py: 0.5,
-                      mr: 0.5,
                       width: "fit-content",
                       fontSize: "14px",
                       borderRadius: "12px",
@@ -462,7 +459,7 @@ import {
                 variant="subtitle2"
                 sx={{
                   color: "#75717F",
-                  fontSize: { xs: "14px" },
+                  fontSize: { xs: "16px" },
                   lineHeight: "24px",
                   fontWeight: "400",
                   textAlign: "center",
@@ -476,7 +473,7 @@ import {
                 variant="subtitle2"
                 sx={{
                   color: "#EBE9ED",
-                  fontSize: "20px",
+                  fontSize: "24px",
                   lineHeight: "32px",
                   fontWeight: "600",
                   textAlign: "center",
@@ -497,7 +494,7 @@ import {
                 variant="subtitle2"
                 sx={{
                   color: "#75717F",
-                  fontSize: { xs: "14px" },
+                  fontSize: { xs: "16px" },
                   lineHeight: "24px",
                   fontWeight: "400",
                   textAlign: "center",
@@ -510,7 +507,7 @@ import {
                 variant="subtitle2"
                 sx={{
                   color: "#EBE9ED",
-                  fontSize: "20px",
+                  fontSize: "24px",
                   lineHeight: "32px",
                   fontWeight: "600",
                   textAlign: "center",
@@ -545,11 +542,11 @@ import {
               variant="h1"
               sx={{
                 whiteSpace:"nobreak",
-                color: "#EBE9ED",
-                fontSize: { xs: "20px", sm: "28px" },
-                lineHeight: { xs: "32px", sm: "36px" },
+                color: "#EBE9ED",                
+                lineHeight: { xs: "30px", sm: "30px" },
                 fontWeight: "600",
               }}
+              className="leading-8 mb-[16px] text-[32px]"
             >
               Buy With
             </Typography>
@@ -601,10 +598,11 @@ import {
                     variant="subtitle2"
                     sx={{                      
                       color: "#EBE9ED",
-                      fontSize: { xs: "14px", sm: "14px" },
+                      fontSize: { xs: "16px", sm: "16px" },
                       fontWeight: buyWith === text ? "400" : "700",
                       lineHeight: "24px",
                     }}
+                    className="mx-1"
                   >
                     {text}
                   </Typography>

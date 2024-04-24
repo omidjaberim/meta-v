@@ -11,17 +11,11 @@ import Roadmap from "./Roadmap";
 import FaqSection from "./FaqSection";
 import Footer from "./Footer";
 import { useRef, useState } from "react";
-
-import { Application } from '@splinetool/runtime';
 import { elementIsVisibleInViewport } from "./actions/actions";
 
-
-
 export default function App() {
-
   const aboutRef = useRef()
   const [selectedItem,setSelectedItem] = useState<string>("meta")
-
   const scrollToId = (id:string)=>{
       document.getElementById(id)?.scrollIntoView({
         behavior : 'smooth',
@@ -29,25 +23,26 @@ export default function App() {
         inline : "start"
       });
   }
-  const scrolled =()=>{
+  
+  const scrolled =()=>{   
     if(elementIsVisibleInViewport(document.getElementById("meta")))
-      setSelectedItem("meta") 
+      setSelectedItem("meta"); 
     else if(elementIsVisibleInViewport(document.getElementById("about")))
-      setSelectedItem('about')
-    else if(elementIsVisibleInViewport(document.getElementById("FAQ")))
-      setSelectedItem("FAQ")
+      setSelectedItem('about');
     else if(elementIsVisibleInViewport(document.getElementById("roadmap")))
-      setSelectedItem("roadmap")
+      setSelectedItem("roadmap");
     else if(elementIsVisibleInViewport(document.getElementById("tokenomics")))
-      setSelectedItem("tokenomics")
+      setSelectedItem("tokenomics");
     else if(elementIsVisibleInViewport(document.getElementById("Technology")))
-      setSelectedItem('Technology')
+      setSelectedItem('Technology');
+    else if(elementIsVisibleInViewport(document.getElementById("FAQ")))
+      setSelectedItem("FAQ");
 
   }
-  return (  
-        
+  console.log(selectedItem,"selectedItem")
+  return (          
     <Grid onScroll={scrolled} className="w-full flex justify-center bg-black max-h-screen overflow-auto " id="scrollbar1" >
-      <div className="lg:max-w-[1440px] w-full flex-col items-center justify-center relative "id="meta" >         
+      <div className="lg:max-w-[1440px] w-full flex-col items-center justify-center relative" id="meta" >         
           <Header ref={aboutRef} scrollToId={scrollToId} selectedItem={selectedItem} />
           <MarketListingTime />
           <Testimonies />
@@ -59,7 +54,5 @@ export default function App() {
           <Footer scrollToId={scrollToId} selectedItem={selectedItem} />
       </div>  
     </Grid>
-      
-
   );
 }

@@ -151,7 +151,7 @@ const Tabs = ({isSmallScreen , activeTab , tabsData=[], handleActive,...props})=
             let active = activeTab == index.toString();
                 return (
                 <Tab   key={tab.title} active={active.toString()}  onClick={(event)=>onTabClick(event,index)} >
-                  <TabInner className={`transition-all font-Oxanium rounded-[22px] hover:border-x-1 hover:border-t-2 hover:border-[#6C6E78] '+ ${active ? 'border-x-1 border-t-2 border-[#FDD4FC]':''}`} >
+                  <TabInner className={`transition-all py-[25px]  font-Oxanium md:rounded-[22px] hover:border-x-1 hover:border-t-2 hover:border-[#6C6E78] '+ ${active ? 'border-x-1 border-t-2 border-[#FDD4FC]':''}`} >
                   <Title  active={active.toString()}  > {!isSmallScreen ? tab.title : tab.subtitle }</Title>
                   {!isSmallScreen &&(active) &&<Description>{tab.description}</Description>}
                   </TabInner>
@@ -221,12 +221,13 @@ export default  () => {
         margin={"auto"}
         padding={'16px'}
         component={"section"}
-        className='bg-black font-Oxanium'
+        className='bg-black '
         id="Technology"
+        
       >
-        {isSmallScreen ? (<GradientText className='lg:mt-0 mt-[48px] ' >
+        {isSmallScreen ? (<GradientText className='lg:mt-0 mt-[48px] text-[28px] font-Oxanium' >
             Technological <br/> Foundations
-        </GradientText>) : (<GradientText>
+        </GradientText>) : (<GradientText className='text-[28px] font-Oxanium' >
             Technological Foundations <br/> of META-V
         </GradientText>)
         }
