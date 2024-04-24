@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Container = styled(Box)(({theme})=>({  
 display: 'flex',
-padding: '80px 125px',
+padding: '0px 125px',
 flexDirection: 'column',
 alignItems: 'center',
 gap: '40px',
@@ -55,23 +55,19 @@ const TokenShareWrapper = styled(Box)(({theme})=>({
 
 
 const Title = styled(Box)(({theme})=>({
- textAlign: 'center',
-fontSize: '36px',
-fontStyle: 'normal',
-fontWeight: '400',
-lineHeight: '44px', 
-background: 'linear-gradient(93deg, #CDCFFF 16.47%, #FED6FF 49.36%, #FFE5DF 81.61%)',
-WebkitBackgroundClip:'text',
-WebkitTextFillColor:'transparent',
-backgroundClip:'text',
-
-[`@media (max-width: ${theme.breakpoints.values.sm}px)`]:{    
-fontSize: "28px",
-}
-
+    textAlign: 'center',
+    fontSize: '36px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '44px', 
+    background: 'linear-gradient(93deg, #CDCFFF 16.47%, #FED6FF 49.36%, #FFE5DF 81.61%)',
+    WebkitBackgroundClip:'text',
+    WebkitTextFillColor:'transparent',
+    backgroundClip:'text',
+    [`@media (max-width: ${theme.breakpoints.values.sm}px)`]:{    
+        fontSize: "28px",
+    }
 }))
-
-
 
 const tokenShareData = [
     {
@@ -115,11 +111,9 @@ const tokenShareData = [
     
 ]
 const Tokenomics = ()=>{
-    const theme =  useTheme();
-
     return(
-        <Container component={"section"} id="tokenomics" className='bg-black font-Oxanium mb-[130px] flex' >
-           <Title  >Tokenomics</Title>
+        <Container id="tokenomics"   className='bg-black font-Oxanium  flex flex-col' >
+           <Title className='mt-[75px]' >Tokenomics</Title>
             <TokenShares>
                 {tokenShareData.map((share,index)=>{
                     return (
@@ -132,11 +126,11 @@ const Tokenomics = ()=>{
                     )
                 })}
             </TokenShares>
-            <Box className="w-full h-full flex justify-center items-center mt-[40px] transition-all" >
+            <Box className="relative w-full h-full flex justify-center items-center mt-[40px] transition-all" >
                 <Image src={"/assets/ring.svg"} alt="ring-meta" width={450} height={450} className="w-full h-full animate-pulse	"  />     
+                <Image alt='' width={170} height={100} src={"/tokensRemain.png"} className='absolute top-[52%] text-[#FFAE9C] ' />
             </Box>
         </Container>
     )
 }
-
 export default Tokenomics;

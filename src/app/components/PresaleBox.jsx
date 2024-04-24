@@ -207,18 +207,19 @@ import {
     };
   
     return (
-      <Box  width={{xs:"100%",xl:"max-content" , md:"max-content"}} className="font-Oxanium z-20" >
+      <Box  width={{xs:"100%" , md:"max-content"}} 
+        className=" max-w-[640px] font-Oxanium z-20" 
+        >
         <Loading loading={loading} />
         <ToastNotify alertState={alertState} setAlertState={setAlertState} />
         <Stack  gap={{xl:2 , md:2 , xs:2}} maxWidth={'100%'} px={{ xs: 0, sm: 4  }} width={"100%"} alignItems={"center"} justifyContent={"center"}>
           <Typography
             variant="h1"
             sx={{
-              color: "#EBE9ED",
-              fontSize: { xs: "20px" },
+              color: "#EBE9ED",              
               textAlign: "center",
             }}
-            className="font-Oxanium leading-8 font-normal	"
+            className="font-Oxanium leading-8 font-bold text-[30px] animate-pulse	"            
           >
             Market Listing time
           </Typography>
@@ -229,12 +230,11 @@ import {
         <Stack
           mt={6}
           sx={{
-            background: "#231b2a",
             px: { xs: 2, sm: 4 },
             py: 4,            
             gap: 2,
           }}
-          className="rounded-3xl border-[#36303C] border-t-[3px] border-x-2"
+          className="rounded-[26px] border-[#36303C] border-t-[3px] border-x-2 bg-[#231b2a] bg-[url('/Noise.png')] bg-cover"
         >
           <Stack
             flexDirection={{ xs: "column", md: "row" }}
@@ -252,32 +252,32 @@ import {
                 fontWeight: "600",
                 textAlign: "left",
               }}
+              className="flex items-center "
               
             >
-              PreSale{" "}
+              PreSale
               <span
                 style={{
                   color: "#B28FEE",
                 }}
+                className="mx-1"
               >
                 Stage {currentStage + 1}
               </span>
               <Box
-                component={"span"}
+                component={"div"}
                 sx={{
                   backgroundColor: "#f1423a",
-                  fontSize: { xs: "14px", sm: "16px" },
-                  ml: 1,
-                  py: 0.8,
-                  px: 1,
+                  fontSize: { xs: "14px", sm: "16px" },                 
                   position: "relative",
                   top: { xs: "-2px", sm: "-5px" },
                   borderRadius: "20px",
                   fontWeight: "600",
                 }}
+                className="animate-bounce px-[10px] mx-2"
+     
               >
-                {" "}
-                80%
+                  80%
               </Box>
             </Typography>
             <Box
@@ -404,9 +404,9 @@ import {
           </Stack>
           <Stack
             sx={{
-              height: "30px",
+              height: "24px",
               backgroundColor: "#36303C",
-              mt: 0.5,
+              mt: '12px',
               borderRadius: "20px",
               overflow: "hidden",
             }}
@@ -455,6 +455,7 @@ import {
             justifyContent={"space-evenly"}
             gap={{ xs: 1, sm: 0 }}
             alignItems={"center"}
+            className="mt-[12px]"
           >
             <Stack gap={1}>
               <Typography
@@ -530,14 +531,14 @@ import {
             sx={{
               background: "#3F3947",
               height: "1px",
-              mt: 1,
+              mt: "16px",
+              mb:"18px"
             }}
           />
           <Stack
             flexWrap={"wrap"}
             flexDirection={{ xs: "column", md: "row" }}
             justifyContent={"space-between"}
-            gap={{ xs: 1, sm: 1 }}
             alignItems={{ xs: "start", md: "center" }}
           >
             <Typography
@@ -561,7 +562,7 @@ import {
                 py: 1,
                 px: 1,
                 gap: 2,
-                width: { xs: "100%", md: "315px" },
+                width: { xs: "100%", md: "275px" },
               }}
             >
               {[
@@ -642,7 +643,7 @@ import {
                               : usdcIcon.src
                           }
                           sx={{
-                            width: "20px",
+                            width: "24px",
                             marginRight: { xs: "6px", md: "20px" },
                             marginLeft: { xs: "-10px", md: "0px" },
                             marginTop: { xs: "-3px", sm: "-3px" },
@@ -671,7 +672,7 @@ import {
                           alt="logo"
                           src={logoN.src}
                           sx={{
-                            width: "20px",
+                            width: "24px",
                             marginRight: { xs: "6px", md: "20px" },
                             marginLeft: { xs: "-10px", md: "0px" },
                             marginTop: { xs: "-3px", sm: "-3px" },
@@ -684,7 +685,7 @@ import {
               </Box>
             </Stack>
           </Stack>
-          <Stack mt={1}>
+          <Stack mt={2}>
             <StyledButton
               width="100%"
               onClick={async () => (account ? buyHandler() : await open())}

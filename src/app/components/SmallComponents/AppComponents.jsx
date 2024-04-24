@@ -93,7 +93,7 @@ export const StyledInput = ({ color, borderColor, ...props }) => {
   const[active,setActive] = useState(false)
   return (
     <Box sx={{
-      height:"64px",
+      height:"60px",
       borderRadius:"12px",
     }}     
     >

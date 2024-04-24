@@ -190,7 +190,7 @@ const Footer = (props) => {
                     padding: "2px 8px",
                   },
                 }}
-                className={`cursor-pointer hover:animate-pulse hover:scale-105 transition-all  ${selectedItem === 'meta' ? ' scale-105 text-[#1976d2]' : ''}`}
+                className={`cursor-pointer hover:animate-pulse hover:scale-105 transition-all `}
                 onClick={()=>scrollToId(menu.link.slice(1))}
               >
                 {menu.title}

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Box,  styled, useMediaQuery } from '@mui/system';
 import { Typography } from '@mui/material';
 import GriLineImage from '@/assets/gridLine.svg';
-import AI from '@/assets/webglPreview/AI.png';
-import Blockchain from '@/assets/webglPreview/Blockchain.png';
-import VR from '@/assets/webglPreview/VR.png';
+import AI from '@/assets/webglPreview/META-V-TECH-AI.png';
+import Blockchain from '@/assets/webglPreview/META-V-TECH-BLOCK.png';
+import VR from '@/assets/webglPreview/META-V-TECH-VR.png';
 import Image from "next/image"
 
 const FoundationSection = styled(Box)(({theme})=>({
@@ -63,9 +63,7 @@ const Tab = styled(Box)(({theme,active})=>({
     borderRadius: "10px",
     maxWidth :"368px",
     cursor:"pointer",
-    "&:hover":{
-      background: active === "false" ? "linear-gradient( to bottom, #FFF 0%, #222326 80%, #131315 100%)" : "",
-    },
+   
    
     [`@media (max-width: ${theme.breakpoints.values.sm}px)`]:{
         display: "flex",
@@ -151,12 +149,13 @@ const Tabs = ({isSmallScreen , activeTab , tabsData=[], handleActive,...props})=
     return (<>{
         tabsData.map((tab,index)=>{
             let active = activeTab == index.toString();
-                return (<Tab  className='font-Oxanium ' key={tab.title} active={active.toString()}  onClick={(event)=>onTabClick(event,index)} >
-              <TabInner className='transition-all' >
-                <Title  active={active.toString()}  > {!isSmallScreen ? tab.title : tab.subtitle }</Title>
-               {!isSmallScreen &&(active) &&<Description>{tab.description}</Description>}
-              </TabInner>
-            </Tab>)
+                return (
+                <Tab   key={tab.title} active={active.toString()}  onClick={(event)=>onTabClick(event,index)} >
+                  <TabInner className={`transition-all font-Oxanium rounded-[22px] hover:border-x-1 hover:border-t-2 hover:border-[#6C6E78] '+ ${active ? 'border-x-1 border-t-2 border-[#FDD4FC]':''}`} >
+                  <Title  active={active.toString()}  > {!isSmallScreen ? tab.title : tab.subtitle }</Title>
+                  {!isSmallScreen &&(active) &&<Description>{tab.description}</Description>}
+                  </TabInner>
+                </Tab>)
             })
     }</>)
 }
@@ -231,7 +230,6 @@ export default  () => {
             Technological Foundations <br/> of META-V
         </GradientText>)
         }
-
         <Box display={"flex"} height={ isSmallScreen ? "max-content" :"550px"} width={"100%"} flexWrap={"wrap"}  flexDirection={!isSmallScreen ? 'row' : 'column'} >
           <Box display={"flex"} gap={"16px"} flexWrap={"wrap"} justifyContent={"center"} padding={!isSmallScreen ? "0px 64px" :"16px 0px"} flexDirection={!isSmallScreen ? 'column' : 'row'} >            
             <Tabs isSmallScreen={isSmallScreen} activeTab={activeTab} tabsData={tabsData} handleActive ={handleActive} />

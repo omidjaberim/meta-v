@@ -6,6 +6,7 @@ import {
   AccordionSummary,
   Typography,
   useTheme,
+  Grid
 } from "@mui/material";
 
 import minus from "@/assets/minus-icon.svg";
@@ -167,29 +168,47 @@ const GradientText = styled("div")(({ theme, active }) => ({
   },
 }));
 
-const GradientCircle = styled("div")(({ theme, active }) => ({
-  width: "1000px",
-  height: "700px",
-  transform: "rotate(-32.514deg)",
+const Gradient = styled(Box)(({ theme }) => ({
+  zIndex:0,
   position: "absolute",
-  right: "-250px",
-  bottom: "-400px",
-  borderRadius: "1108px",
-  opacity: "0.64",
-  background: "linear-gradient(93deg, #5659C4 0.48%, #D8A1BC 100%)",
-  filter: "blur(100px)",
-  [`@media (max-width: ${theme.breakpoints.values.md}px)`]: {
-    width: "512px",
-    height: "345px",
-    right: "-200px",
-    bottom: "-50px",
-    
+  top: "75%",
+  left: "100%",
+  width: "50%",
+  height: "50%",
+  transform: "translate(-50%, -50%)",
+  flexShrink: "0",
+  borderRadius: "50%",
+  opacity: "0.36",
+  background: "var(--gr3, linear-gradient(93deg, #5659C4 0.48%, #D8A1BC 100%))",
+  filter: "blur(77px)",
+  '&:nth-child(1)': {
+   display:"none"
+  },
+
+  [`@media (max-width: 1440px)`]: {
+    top:"50%",
+    width:"50%",
+    height:"60%",
+  },
+
+  [`@media (max-width: ${theme.breakpoints.values.lg}px)`]: {
+    top:"50%",
+    width:"50%",
+    height:"80%",
   },
   [`@media (max-width: ${theme.breakpoints.values.sm}px)`]: {
-    width: "512px",
-    height: "345px",
-    right: "-200px",
-    bottom: "24px",
+  top:"8%",
+  left:"0%",  
+  width:"200px",
+  height:"200px",  
+  filter: "blur(47px)",
+  borderRadius: "297px",
+  '&:nth-child(1)': {
+    display:'block',
+    position: 'absolute',
+    top: '100%',
+    left:'110%'
+  },
   },
 }));
 
@@ -224,11 +243,12 @@ const FaqSection = () => {
 
   return (
       <Container id="FAQ"  margin={"auto"} component={"section"} className="bg-black w-full font-Oxanium" >        
+        <Grid className="w-full backdrop-blur-xl backdrop-brightness-150 bg-[url('/horizontalLineBg.svg'),url('/verticalLineBg.svg')] bg-top bg-no-repeat  " >
         <GradientText className='mt-[116px] lg:mt-[20px]' >
           FAQ
         </GradientText>        
         <Box 
-          className="flex w-full flex-1 sm:flex-col-reverse md:flex-row"
+          className="flex w-full flex-1 sm:flex-col md:flex-row"
         >
           <div className="md:w-full lg:w-1/2">
           <FaqWrapper zIndex={1} >
@@ -244,14 +264,16 @@ const FaqSection = () => {
             ))}             
           </FaqWrapper>
           </div>
-          <div className="md:w-full lg:w-1/2 flex justify-center items-center" > 
-            <Image src={faq} width={240} height={240}  />
+          <div className="md:w-full lg:w-1/2 flex justify-center items-start mt-[68px]" > 
+            <Image src={faq} width={336} height={388}  />
           </div>
         </Box>
         <Image alt="bg" src={"/star2.svg"} width={16} height={16} className="absolute z-50 top-[52%] right-[15%]" style={{animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',pointerEvents: "none",userSelect: "none"}} />
         <Image alt="bg" src={"/star2.svg"} width={22} height={22} className="absolute z-50 top-[12%] right-[36%]" style={{animation: 'pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',pointerEvents: "none",userSelect: "none"}} />
         <Image alt="bg" src={"/star3.svg"} width={32} height={32} className="absolute z-50 top-[22%] right-[28%]" style={{animation: 'pulse 2.9s cubic-bezier(0.4, 0, 0.6, 1) infinite',pointerEvents: "none",userSelect: "none"}} />
         <Image alt="bg" src={"/star3.svg"} width={26} height={26} className="absolute z-50 top-[72%] right-[45%]" style={{animation: 'pulse 3.4s cubic-bezier(0.4, 0, 0.6, 1) infinite',pointerEvents: "none",userSelect: "none"}} />
+        <Gradient/>
+        </Grid>
       </Container>
   );
 };

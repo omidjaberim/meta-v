@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { WagmiConfig } from "wagmi";
 import { bscTestnet } from "wagmi/chains";
-import { ConectivityProvider } from "./utils";
-
 
 // wallet start
 
@@ -15,6 +12,8 @@ const chains = [bscTestnet];
 
 
 const inter = Inter({ subsets: ["latin"] });
+
+
 
 export const metadata: Metadata = {
   title: "meta v",
@@ -27,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" >
-      <body className={inter.className}>{children}</body>
+    <html  lang="en" className="scroll-smooth" >
+      <body className={inter.className}  >{children}</body>
     </html>
   );
 }

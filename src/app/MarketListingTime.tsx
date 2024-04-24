@@ -1,13 +1,13 @@
 import React from "react";
 import { Box,  styled, useMediaQuery } from "@mui/system";
 import {
+  Button,
   Grid,
   Typography,
 } from "@mui/material";
 import PresaleBox from "@/app/components/PresaleBox";
 import Image from "next/image"
-import ArrowRight from "@/assets/arrowRight.svg"
-import ThreeDMesh from "./3d";
+import AuditImg from "@/assets/audit.png"
 
 
 const PresaleSection = ()=>{
@@ -54,7 +54,7 @@ const PresaleSection = ()=>{
                   <Image alt="bg" src={"/star2.svg"} width={14} height={14} className="absolute z-50 top-[82%] right-[18%] " style={{animation: 'pulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
                   <Image alt="bg" src={"/star3.svg"} width={18} height={18} className="absolute z-50 top-[92%] right-[38%] " style={{animation: 'pulse 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite'}} />
                 </div>
-                <div  className="z-20 pb-1 mt-[90px]">
+                <div  className="z-20 pb-1 mt-[90px] flex flex-col items-center">
                     <Typography sx={typoStyle} display={"flex"} flexWrap={"wrap"} gap={{ xs:"2px", md:"2px", xl:"8px" }} width={"100%"} justifyContent={"center"}>
                     <Box component="span"  whiteSpace={"nowrap"} ml={{lg:"8px" ,xs:"8px"}}  >META-V,</Box>  
                     <Box component="span"   ml={{lg:"8px" ,xs:"8px"}} >Epitomizes a</Box>  
@@ -67,9 +67,9 @@ const PresaleSection = ()=>{
                     <Typography  sx={subTypeStyle}  >
                         The convergence of reality and innovation, where aspirations are converted into digital realms.
                     </Typography>
-                    <Typography className="flex justify-center pt-[24px] pb-[40px] text-white leading-5	font-semibold" >
-                        Audit <Image src={ArrowRight} alt="audit" className="mx-1" />
-                    </Typography>
+                    <Button className=" flex justify-center items-center p-[5px] mt-[24px] mb-[40px] text-white leading-5 font-bold text-[24px]" >
+                        <Image src={AuditImg} alt="" width={82} height={34} className="cursor-pointer" />
+                    </Button>
                 </div>
                 <PresaleBox />
             </div>
