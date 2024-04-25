@@ -24,7 +24,7 @@ const ExpandPlusMinus = ({ isExpanded }) => {
       justifyContent="center"
       alignItems="center"
     >
-      {isExpanded ? <Image src={minus} /> : <Image src={plus} />}
+      {isExpanded ? <Image alt="" src={minus} /> : <Image alt="" src={plus} />}
     </Box>
   );
 };

@@ -7,3 +7,5 @@ export const elementIsVisibleInViewport = (el:any, partiallyVisible = false) => 
           ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
       : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
   };
+
+  

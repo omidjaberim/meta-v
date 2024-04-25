@@ -10,48 +10,77 @@ import Tokenomics from "./Tokenomics";
 import Roadmap from "./Roadmap";
 import FaqSection from "./FaqSection";
 import Footer from "./Footer";
-import { useRef, useState } from "react";
-import { elementIsVisibleInViewport } from "./actions/actions";
+import {   useLayoutEffect, useState } from "react";
+
+const capitalize = (text: string) =>
+  text.charAt(0).toUpperCase() + text.substr(1);
+
+const clamp = (value: number) => Math.max(0, value);
+
+const isBetween = (value: number, floor: number, ceil: number) =>
+  value >= floor && value <= ceil;
+const useScrollspy = (ids: string[], offset: number = 0) => {
+  const [activeId, setActiveId] = useState("");
+
+  useLayoutEffect(() => {
+    const listener = () => {
+      const scroll = window.pageYOffset;
+
+      const position = ids
+        .map((id) => {
+          const element = document.getElementById(id);
+
+          if (!element) return { id, top: -1, bottom: -1 };
+
+          const rect = element.getBoundingClientRect();
+          const top = clamp(rect.top + scroll - offset);
+          const bottom = clamp(rect.bottom + scroll - offset);
+
+          return { id, top, bottom };
+        })
+        .find(({ top, bottom }) => isBetween(scroll, top, bottom));
+      setActiveId(position?.id || "");
+    };
+
+    listener();
+    window.addEventListener("resize", listener);
+    window.addEventListener("scroll", listener);
+
+    return () => {
+      window.removeEventListener("resize", listener);
+      window.removeEventListener("scroll", listener);
+    };
+  }, [ids, offset]);
+
+  return activeId;
+};
 
 export default function App() {
-  const aboutRef = useRef()
-  const [selectedItem,setSelectedItem] = useState<string>("meta")
   const scrollToId = (id:string)=>{
       document.getElementById(id)?.scrollIntoView({
         behavior : 'smooth',
         block : 'start',
         inline : "start"
       });
+      
   }
-  
-  const scrolled =()=>{   
-    if(elementIsVisibleInViewport(document.getElementById("meta")))
-      setSelectedItem("meta"); 
-    else if(elementIsVisibleInViewport(document.getElementById("about")))
-      setSelectedItem('about');
-    else if(elementIsVisibleInViewport(document.getElementById("roadmap")))
-      setSelectedItem("roadmap");
-    else if(elementIsVisibleInViewport(document.getElementById("tokenomics")))
-      setSelectedItem("tokenomics");
-    else if(elementIsVisibleInViewport(document.getElementById("Technology")))
-      setSelectedItem('Technology');
-    else if(elementIsVisibleInViewport(document.getElementById("FAQ")))
-      setSelectedItem("FAQ");
+  const ids = ["meta", "about", "Technology","tokenomics","roadmap","FAQ"];
+  const activeId = useScrollspy(ids, 54); 
 
-  }
-  console.log(selectedItem,"selectedItem")
   return (          
-    <Grid onScroll={scrolled} className="w-full flex justify-center bg-black max-h-screen overflow-auto " id="scrollbar1" >
-      <div className="lg:max-w-[1440px] w-full flex-col items-center justify-center relative" id="meta" >         
-          <Header ref={aboutRef} scrollToId={scrollToId} selectedItem={selectedItem} />
-          <MarketListingTime />
-          <Testimonies />
-          <AboutSection ref={aboutRef} />
-          <HeroSection />
-          <Tokenomics/>
-          <Roadmap/>
-          <FaqSection />
-          <Footer scrollToId={scrollToId} selectedItem={selectedItem} />
+    <Grid  className="w-full flex justify-center bg-black"  >
+      <div className="lg:max-w-[1440px] w-full flex-col items-center justify-center relative "  >         
+            <Header  scrollToId={scrollToId} selectedItem={activeId} />
+            <div id="meta" >
+              <MarketListingTime />          
+              <Testimonies />
+            </div>
+            <AboutSection  />
+            <HeroSection />
+            <Tokenomics/>
+            <Roadmap/>
+            <FaqSection />
+          <Footer scrollToId={scrollToId} selectedItem={activeId} />
       </div>  
     </Grid>
   );

@@ -31,7 +31,7 @@ const SideMenu = (props:IProp)=>{
                 {[{txt:'META-V',id:"meta"}, {txt:'About  META-V',id:'about'},{txt:'Technology',id:'Technology'}, {txt:'Tokenomics',id:'tokenomics'}, {txt:'Roadmap',id:'roadmap'},{txt:'Faq',id:'FAQ'}].map((text, index) => (
                 <ListItem key={text.txt+index} disablePadding onClick={()=>{toggleDrawer(false);scrollToId(text.id)}} >
                     <ListItemButton>                    
-                    <span className={`text-white font-semibold font-Oxanium text-[20px] leading-8 hover:animate-pulse hover:scale-105 ${selectedItem === text.id ? ' scale-105 text-[#B887FF]' : ''}`} >{text.txt}</span>
+                    <span className={` font-semibold font-Oxanium text-[20px] leading-8 hover:animate-pulse hover:scale-105 ${selectedItem !== '' && selectedItem === text.id ? ' scale-105 text-[#B887FF]' : 'text-white'}`} >{text.txt}</span>
                     </ListItemButton>
                 </ListItem>
                 ))}

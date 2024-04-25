@@ -94,7 +94,7 @@ const Card = ({title,subtitle,points,mt})=>{
           sx={{marginTop:{xs:0,xl:mt}}} 
         >
         <Box  display={"flex"} alignItems={"center"} gap={"8px"} alignSelf={"stretch"}>
-            <Image  src={arrowImage} width={"24px"} height={"24px"}/>
+            <Image alt='' src={arrowImage} width={"24px"} height={"24px"}/>
             <Typography component={'span'} color={"#B887FF"}  fontSize="20px" fontStyle={"normal"} fontWeight={"600"} lineHeight={"32px"}>{title}</Typography>
         </Box>
         <Typography component={'div'}  color={"#FFF"}  fontSize="20px" fontStyle={"normal"} fontWeight={"600"} lineHeight={"32px"}>{subtitle}</Typography>

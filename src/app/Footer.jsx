@@ -102,7 +102,7 @@ const SocialSection = () => {
               <Box width={"24px"} height={"24px"} key={index}  >
               <Link href={platform.link} target="_blank">
                 <Box  width={"100%"} height={"100%"}>
-                  <Image src={platform.image} className="hover:scale-110" />
+                  <Image alt="" src={platform.image} className="hover:scale-110" />
                 </Box>
               </Link>
               </Box>

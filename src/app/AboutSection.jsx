@@ -1,12 +1,11 @@
 import React from 'react';
 import aboutImage from "@/assets/about.svg";
 import Image from "next/image"
-import { forwardRef } from 'react';
 
 
-const About = forwardRef((props,ref)=>{
+const About = ()=>{
   return (
-    <section id='about' className={"w-full flex flex-col items-center  bg-black font-Oxanium"} ref={ref} >        
+    <section id='about' className={"w-full flex flex-col items-center  bg-black font-Oxanium"}  >        
         <div className={"w-full flex justify-center items-center mt-[156px]"} >
             <img src={aboutImage.src} className="w-[108.097px] h-[34px] mr-[4px] md:w-[90.097px] md:h-[24px] md:mx-[4px]" alt="about"/>
             <div className={"text-white md:text-[32px] text-[41px] mx-3"}>META-V</div>            
@@ -22,11 +21,11 @@ const About = forwardRef((props,ref)=>{
             participation, and diverse interactions beyond physical boundaries.`
         </div>
         <div className='w-full flex justify-center items-center'>
-            <Image src="/WaveformSmall.svg" width={420} height={260} className='lg:w-[100%] flex md:hidden' />
-             <Image src="/Waveformfull.png" width={420} height={260} className='lg:w-[70%] hidden md:flex '  /> 
+            <Image alt='' src="/WaveformSmall.svg" width={420} height={260} className='lg:w-[100%] flex md:hidden' />
+             <Image alt='' src="/Waveformfull.png" width={420} height={260} className='lg:w-[70%] hidden md:flex '  /> 
         </div>
     </section>
   );
-});
+};
 
 export default About
