@@ -40,7 +40,7 @@ return (
               </Box>
           </Grid>
           <Grid className="w-1/2 md:w-1/4 flex items-center justify-end gap-[4px] xl:gap-[16px]" >
-            <span className="hidden xl:flex" >Whitepaper</span>
+            <a href="https://meta-v.gitbook.io/meta-v/" className="cursor-pointer" target="_blank" className="hidden xl:flex" >Whitepaper</a>
             <StyledButton  ><span className="font-semibold text-[12px] lg:text-[14px] flex " >Connect <span> Wallet</span></span></StyledButton>
           </Grid>
         </Box>

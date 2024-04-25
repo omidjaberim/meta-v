@@ -40,7 +40,7 @@ const socialShare = [
     image: telegramLogo,
   },
     {
-    link: "https://twitter/META_V_Official",
+    link: "https://twitter.com/META_V_Official",
     image: twitterLogo,
   },
  

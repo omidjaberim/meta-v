@@ -23,3 +23,13 @@ body::-webkit-scrollbar-thumb {
    background-clip: content-box;
     background-color: #d55959;
 }
+@-webkit-keyframes bounce { 
+    from { 
+        -webkit-transform: translate3d(0, 0, 0); 
+        transform: translate3d(0, 0, 0); 
+    } 
+    to { 
+        -webkit-transform: translate3d(0, 6px, 0); 
+        transform: translate3d(0, 6px, 0); 
+    } 
+} 

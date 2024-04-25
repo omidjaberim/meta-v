@@ -264,7 +264,7 @@ const FaqSection = () => {
             ))}             
           </FaqWrapper>
           </div>
-          <div className="md:w-full lg:w-1/2 flex justify-center items-start mt-[68px]" > 
+          <div className="md:w-full lg:w-1/2 flex justify-center items-center lg:mt-[68px] mb-[102px] lg:mb-0 " > 
             <Image src={faq} width={336} height={388}  />
           </div>
         </Box>

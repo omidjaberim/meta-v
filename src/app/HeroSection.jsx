@@ -238,7 +238,7 @@ export default  () => {
            {isSmallScreen&&tabsData.map((tab,index)=>{
                 let active = activeTab == index.toString();
                 if(!active) return;
-                return <Typography className='font-Oxanium'  key={index} variant='p' padding={ "16px"} fontSize={'14px'} fontWeight={400} lineHeight={'24px'} textAlign={"center"} color={"#9A9DAB"}>{tab.description}</Typography>
+                return <Typography className='font-Oxanium mt-[24px]'  key={index} variant='p' padding={ "16px"} fontSize={'14px'} fontWeight={400} lineHeight={'24px'} textAlign={"center"} color={"#9A9DAB"}>{tab.description}</Typography>
            })}  
           <IFrameContainers render3D={!isSmallScreen} tabsData={tabsData}  activeTab={activeTab}/>
         </Box>

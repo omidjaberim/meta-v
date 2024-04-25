@@ -233,7 +233,7 @@ import {
                    
             gap: 2,
           }}
-          className="px-[24px] py-[20px] rounded-[26px] border-[#36303C] border-t-[3px] border-x-2 bg-[#231b2ae3] bg-[url('/Noise.png')] bg-cover"
+          className="px-[24px] py-[20px] rounded-[26px] border-[#36303C] border-t-[3px] border-x-2 bg-[#231b2a] bg-[url('/Noise.png')] bg-cover"
         >
           <Stack
             flexDirection={{ xs: "column", md: "row" }}
@@ -273,8 +273,14 @@ import {
                   borderRadius: "20px",
                   fontWeight: "600",
                 }}
-                className="animate-bounce px-[10px] mx-2"
-     
+                className="px-[10px] mx-2"
+                style={{
+                  animation: 'bounce .5s', 
+                  animationDirection: 'alternate', 
+                  animationTimingFunction: 'cubic-bezier(.5, 0.05, 1, .5)', 
+                  animationIterationCount: 'infinite',
+
+                }}
               >
                   80%
               </Box>
@@ -558,8 +564,8 @@ import {
                 justifyContent: "space-around",
                 py: 1,
                 px: 1,
-                gap: 2,
-                width: { xs: "100%", md: "275px" },
+                gap: 1,
+                width: { xs: "100%", md: "280px" },
               }}
             >
               {[
@@ -585,9 +591,9 @@ import {
                     justifyContent: "center",
                     alignItems: "center",
                     gap:"4px",
-                    borderRadius: "12px",
+                    borderRadius: "8px",
                     py: { xs: 1, sm: 0.4 },
-                    px: { xs: 1, md: 1 },
+                    px: { xs: 1.8, md: 1.8 },
                     width:"100%",
                     background: buyWith === text ? "#514e57" : "transparent",
                     transition:"all .5s"

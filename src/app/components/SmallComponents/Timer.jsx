@@ -43,7 +43,7 @@ export default function TimerCountDown({ time }) {
       <Box display="flex" alignItems="center" justifyContent="space-evenly" width={"100%"} >       
         <Box  
           className="bg-[url('/timeNoise2.png')] bg-auto bg-[#231b2ada]  pt-2 w-[88px] h-[90px]  rounded-[16px] border border-[#303136]  " display="flex" flexDirection="column" alignItems="center"   >
-            <Box className="text-[28px] font-semibold	text-xl md:text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >
+            <Box className="text-[28px] font-semibold	 md:text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >
               {countTime.time_days > 9 ? "" : 0}
               {countTime.time_days}              
             </Box>
@@ -51,7 +51,7 @@ export default function TimerCountDown({ time }) {
         </Box>
         <Box  
           className="bg-[url('/timeNoise2.png')] bg-auto pt-2 w-[90px] h-[88px]   bg-[#231b2ada]  rounded-[16px] border border-[#303136] text-gradient-to-r from-[#FED3CA] to-[#FFA998]" display="flex" flexDirection="column" alignItems="center"   >
-            <Box className="text-[28px] font-semibold	text-xl md:text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >            
+            <Box className="text-[28px] font-semibold	md:text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >            
             {countTime.time_Hours > 9 ? "" : 0}
             {countTime.time_Hours}
             </Box>
@@ -59,7 +59,7 @@ export default function TimerCountDown({ time }) {
         </Box>
         <Box  
           className="bg-[url('/timeNoise2.png')] bg-cover  bg-[#231b2ada] pt-2 w-[90px] h-[88px]  rounded-[16px] border border-[#303136] text-gradient-to-r from-[#FED3CA] to-[#FFA998]" display="flex" flexDirection="column" alignItems="center"   >
-            <Box className="text-[28px] font-semibold	text-xl md:text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >            
+            <Box className="text-[28px] font-semibold	 md:text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >            
             {countTime.time_Minusts > 9 ? "" : 0}
             {countTime.time_Minusts}
             </Box>
@@ -67,7 +67,7 @@ export default function TimerCountDown({ time }) {
         </Box>
         <Box  
           className="bg-[url('/timeNoise2.png')] bg-cover  bg-[#231b2ada] pt-2 w-[90px] h-[88px]  rounded-[16px] border border-[#303136] text-gradient-to-r from-[#FED3CA] to-[#FFA998]" display="flex" flexDirection="column" alignItems="center"   >
-            <Box className="text-[28px] font-semibold	text-xl md:text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >          
+            <Box className="text-[28px] font-semibold	 md:text-3xl	leading-10  bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text" >          
             {countTime.time_seconds > 9 ? "" : 0}
             {countTime.time_seconds}
             </Box>

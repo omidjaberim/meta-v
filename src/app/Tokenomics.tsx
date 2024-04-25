@@ -126,8 +126,8 @@ const Tokenomics = ()=>{
                 })}
             </TokenShares>
             <Box className="relative w-full h-full flex justify-center items-center mt-[40px] transition-all" >
-                <Image src={"/assets/ring.svg"} alt="ring-meta" width={450} height={450} className="w-full h-full animate-pulse	"  />     
-                <Image alt='' width={170} height={100} src={"/tokensRemain.png"} className='w-[32%] absolute top-[52%] text-[#FFAE9C] ' />
+                <Image src={"/assets/ring.svg"} alt="ring-meta" width={450} height={450} className="w-full h-full"  style={{animation: 'pulse 5.4s cubic-bezier(0.4, 0, 0.6, 1) infinite'} } />     
+                <Image alt='' width={170} height={100} src={"/tokensRemain.png"} className='w-[26%] lg:w-[20%] absolute top-[52%] text-[#FFAE9C] ' />
             </Box>
         </Container>
     )

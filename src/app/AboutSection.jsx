@@ -1,14 +1,30 @@
 import React from 'react';
 import aboutImage from "@/assets/about.svg";
 import Image from "next/image"
+import {   styled } from '@mui/system';
+import { Typography } from '@mui/material';
 
+const Title =  styled(Typography)(({theme})=>({  
+    textAlign: "center",
+    fontSize: "36px",
+    fontStyle: "normal",
+    fontWeight: "400",
+    lineHeight: "44px", 
+    background: 'linear-gradient(93deg, #CDCFFF 16.47%, #FED6FF 49.36%, #FFE5DF 81.61%)',
+    WebkitBackgroundClip:'text',
+    WebkitTextFillColor:'transparent',
+    backgroundClip:'text',
+        [`@media (max-width: ${theme.breakpoints.values.sm}px)`]:{       
+        }
+    })
+)
 
 const About = ()=>{
   return (
     <section id='about' className={"w-full flex flex-col items-center  bg-black font-Oxanium"}  >        
         <div className={"w-full flex justify-center items-center mt-[156px]"} >
             <img src={aboutImage.src} className="w-[108.097px] h-[34px] mr-[4px] md:w-[90.097px] md:h-[24px] md:mx-[4px]" alt="about"/>
-            <div className={"text-white md:text-[32px] text-[41px] mx-3"}>META-V</div>            
+            <Title className={" md:text-[32px] text-[41px] mx-3 font-bold"}>META-V</Title>            
         </div>
         <span className='bg-gradient-to-r from-[#FED3CA]  to-[#FFA998] inline-block text-transparent bg-clip-text mx-1 md:mx-3' >LLC Company</span>
         <div className={"flex md:hidden  text-center text-[#9A9DAB] lg:w-[60%] mt-[35px] px-5 lg:px-0 text-[14px]"}>                 

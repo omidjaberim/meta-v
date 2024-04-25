@@ -34,7 +34,7 @@ const PresaleSection = ()=>{
       <Grid className="w-full backdrop-blur-xl backdrop-brightness-150 bg-[url('/horizontalLineBg.svg'),url('/verticalLineBg.svg')] bg-top bg-no-repeat  " 
           sx={{fill:"linear-gradient(270deg, rgba(11, 11, 12, 0.64) 0%, rgba(34, 35, 38, 0.64) 21.5%, rgba(34, 35, 38, 0.64) 76.5%, rgba(1, 2, 10, 0.34) 100%)",pointerEvents: "none",userSelect: "none"}} >            
         <Grid className="w-full flex sm:h-[1140px] lg:h-[1140px] backdrop-brightness-150 bg-gradient-to-b from-[rgba(187,143,238,0.7)]  to-black "   >
-          <Grid className="w-full relative px-[16px] md:px-0 bg-[url('/Background/Background/B---33.png')] bg-no-repeat bg-top" >            
+          <Grid className="w-full relative px-[16px]  md:px-0 bg-[url('/Background/Background/background.png')] bg-no-repeat bg-top" >            
               {/* <div className="absolute z-10 top-0 w-full h-[100%] overflow-hidden" >
                  <div className="w-[120%] bg-[rgb(0,0,0,.6)] -rotate-45 transform aspect-square absolute sm:bottom-[70%] md:bottom-[60%] lg:bottom-[80%] overflow-hidden" style={{transformOrigin:" 70% 70%"}}  >
                     <Image src="/Rectangle3361.jpg" alt="" width={450} height={240} className="w-full h-full rotate-45 transform" style={{transformOrigin:" -22% 28%"}} />

@@ -90,7 +90,7 @@ const CardStyle = styled(Box)(({theme})=>({
 const Card = ({title,subtitle,points,mt})=>{
     return (
       <CardStyle 
-          className={`w-full md:w-[224px] bg-[url('/roadmapNoise.png')] bg-cover bg-black hover:scale-105 transition-all font-Oxanium md:h-[380px] `}
+          className={`  w-full md:w-[224px] bg-[url('/roadmapNoise.png')] bg-cover bg-black hover:scale-105 transition-all font-Oxanium md:h-[380px] `}
           sx={{marginTop:{xs:0,xl:mt}}} 
         >
         <Box  display={"flex"} alignItems={"center"} gap={"8px"} alignSelf={"stretch"}>
@@ -134,19 +134,19 @@ const roadMapData = [{
 
 const Roadmap = ()=>{
     return (
-          <Grid id='roadmap'  className='w-full  flex flex-col px-0 py-[60px] items-center  '  >
+          <Grid id='roadmap'  className='w-full  flex flex-col px-4 py-[60px] items-center  '  >
             <Grid  className="w-full h-full backdrop-blur-xl backdrop-brightness-150 bg-[url('/horizontalLineBg.svg'),url('/verticalLineBg.svg')] bg-top bg-no-repeat" >
-            <div className='mt-[216px] lg:mt-0 w-full h-full flex flex-col' >
-              <Title className='mt-[80px]' >RoadMap</Title>
-              <Grid className='w-full grid xl:grid-cols-5 gap-4 lg:grid-cols-3  md:grid-cols-2 grid-cols-1 place-content-center place-items-center	place-self-center' >
-              {
-                  roadMapData.map((data,index)=>{
-                  return <Card mt={index % 2 ? "280px":"0px" } key={index} title={data.title} subtitle={data.subtitle} points={data.points} />
-                  })
-              }
-              </Grid>
-              <Gradient/>
-            </div>
+              <div className='mt-[216px] lg:mt-0 w-full h-full flex flex-col' >
+                  <Title className='my-[80px]' >RoadMap</Title>
+                  <Grid className='w-full flex flex-wrap justify-center gap-5' >
+                  {
+                      roadMapData.map((data,index)=>{
+                      return <Card mt={index % 2 ? "280px":"0px" } key={index} title={data.title} subtitle={data.subtitle} points={data.points} />
+                      })
+                  }
+                  </Grid>
+                  <Gradient/>
+              </div>
             </Grid>
           </Grid>
     )
